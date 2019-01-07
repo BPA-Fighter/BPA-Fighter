@@ -8,7 +8,8 @@ package the.fight.of.time;
 
 /**
  *
- * @author Todd Wesley
+ * @author Time Crunchers
+ *
  */
 public class TheFightOfTime {
 
