@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package the.fight.of.time;
+package gfx;
 
 /**
  *
- * @author Joshua Burton
+ * @author grant
  */
-public class Mafia {
-
+public class ImageLoader {
+    
 }

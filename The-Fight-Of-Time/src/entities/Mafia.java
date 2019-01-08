@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 
-package the.fight.of.time;
+package entities;
 
 /**
  *
  * @author Joshua Burton
  */
-public class GUI {
+public class Mafia {
 
-	//I'm changing this
 }

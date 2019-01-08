@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package the.fight.of.time;
+package main.states;
 
 /**
  *
- * @author Joshua Burton
+ * @author grant
  */
-public class IceGuy {
-
+public class GameState {
+    
 }
