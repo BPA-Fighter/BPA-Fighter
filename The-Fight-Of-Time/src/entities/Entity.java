@@ -6,10 +6,27 @@
 
 package entities;
 
+import java.awt.Graphics;
+
 /**
  *
  * @author Joshua Burton
  */
-public class Entity {
+public abstract class Entity {
 
+    // every creature has an x,y
+	protected float x, y;
+
+	// constructor
+	public Entity(float x, float y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	// update
+	public abstract void tick();
+	
+	// draw
+	public abstract void render(Graphics g);
+    
 }

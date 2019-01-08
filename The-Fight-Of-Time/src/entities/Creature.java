@@ -8,8 +8,14 @@ package entities;
 
 /**
  *
- * @author Joshua Burton
+ * @author Time Crunchers
+ * 
  */
-public class Creature {
+public abstract class Creature {
 
+    // every subclass of creature has an x,y
+	public Creature(float x, float y) {
+		super(x, y);
+	}
+    
 }
