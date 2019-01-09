@@ -44,7 +44,7 @@ import managers.KeyManager;
 public class Game extends Canvas implements Runnable {
 	
 	// declare constants
-	public static final String TITLE  = "Street Fighter II";
+	public static final String TITLE  = "The Fight Of Time";
 	public static final int    WIDTH  = 256;
 	public static final int    HEIGHT = 224;
 	public static final int    SCALE  = 2;
@@ -285,7 +285,7 @@ public class Game extends Canvas implements Runnable {
 		/* ALL DRAWING HERE */
 		
 		// init maps
-		ImageIcon ryuStage    = new ImageIcon("ryu_stage.png");
+		ImageIcon iceGuyStage    = new ImageIcon("iceGuy_stage.png");
 		ImageIcon mainStage   = new ImageIcon("main_stage.gif");
 		ImageIcon forestStage = new ImageIcon("forest_stage.gif");
 		
@@ -298,7 +298,7 @@ public class Game extends Canvas implements Runnable {
 			g.drawImage(mainStage.getImage(), -67, -67, null);
 	
 		if (map == 3)
-			g.drawImage(ryuStage.getImage(), -212, 30, ryuStage.getIconWidth() * Game.SCALE, ryuStage.getIconHeight() * Game.SCALE,null);
+			g.drawImage(iceGuyStage.getImage(), -212, 30, iceGuyStage.getIconWidth() * Game.SCALE, iceGuyStage.getIconHeight() * Game.SCALE,null);
 		
 		
 		// if current state exist, then render		

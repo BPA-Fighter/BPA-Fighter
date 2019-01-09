@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -81,14 +82,14 @@ public class GameState extends State {
 		// end game
 		if (mafia.getHealth() <= 0) {
 			// win screen
-			String iceGuyWin = "RYU WINS THE GAME!";
+			String iceGuyWin = "ICEGUY WINS THE GAME!";
 			g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
 			g.setColor(Color.WHITE);
 			int width = g.getFontMetrics().stringWidth(iceGuyWin);
 			g.drawString(iceGuyWin, Game.WIDTH - width/2, Game.HEIGHT);
 		} else if (iceGuy.getHealth() <= 0) {
 			// win screen
-			String mafiaWin = "KEN WINS THE GAME!";
+			String mafiaWin = "MAFIA WINS THE GAME!";
 			g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
 			g.setColor(Color.WHITE);
 			int width = g.getFontMetrics().stringWidth(mafiaWin);

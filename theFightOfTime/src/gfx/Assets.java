@@ -127,63 +127,63 @@ public class Assets {
 		// loops through frame slices and stores in array
 
 		// basic movement:
-		for (int i = 0; i < 6; i++) 
+		for (int i = 0; i < 6; i++) {
 			idle[i] = ss_idle.crop(57, 106, 57 * i, 0);
-
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			parry_f[i] = ss_parry_front.crop(70, 110, 70 * i, 0);
-
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			parry_b[i] = ss_parry_back.crop(70, 108, 70 * i, 0);
-
+                }
 		crouch[0] = ss_crouch.crop(54, 73, 0, 0);
 			
 		jump[0] = ss_jump.crop(70, 154, 0, 0);
 		jump[1] = ss_jump.crop(70, 154, 0, 0);
 		jump[2] = ss_jump.crop(70, 154, 0, 0);
 		
-		for (int i = 3; i < 11; i++) 
+		for (int i = 3; i < 11; i++) {
 			jump[i] = ss_jump.crop(70, 154, 70 * (i - 2), 0);
+                }
 		
-		
-		for (int i = 0; i < 8; i++) 
+		for (int i = 0; i < 8; i++) {
 			front_flip[i] = ss_front_flip.crop(88, 129, 88 * i, 0);
-		
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			back_flip[i] = ss_back_flip.crop(88, 129, 88 * i, 0);
-		
+                }
 		// ground attack:
-		for (int i = 0; i < 6; i++) 
+		for (int i = 0; i < 6; i++) {
 			punch[i] = ss_punch.crop(101, 102, 101 * i, 0);
-
-		for (int i = 0; i < 3; i++) 
+                }
+		for (int i = 0; i < 3; i++) {
 			quick_punch[i] = ss_quick_punch.crop(94, 102, 94 * i, 0);
-
+                }
 		// crouch attack	
-		for (int i = 0; i < 3; i++) 
+		for (int i = 0; i < 3; i++) {
 			crouch_punch[i] = ss_crouch_punch.crop(86, 72, 86 * i, 0);	
-				
+                }
 		// air attacks				
-		for (int i = 0; i < 6; i++) 
+		for (int i = 0; i < 6; i++) {
 			air_punch[i] = ss_air_punch.crop(83, 95, 83 * i, 0);
-		
-		for (int i = 0; i < 4; i++) 
+                }
+		for (int i = 0; i < 4; i++) {
 			punch_down[i] = ss_punch_down.crop(75, 90, 75 * i, 0);
-		
-		for (int i = 0; i < 5; i++) 
+                }
+		for (int i = 0; i < 5; i++) {
 			air_kick[i] = ss_air_kick.crop(99, 94, 99 * i, 0);
-				
+                }
 		// ground kick
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 5; i++) {
 			kick_low[i] = ss_kick_low.crop(115, 111, 115 * i, 0);
-
-		for (int i = 0; i < 9; i++) 
+                }
+		for (int i = 0; i < 9; i++) {
 			upper_kick[i] = ss_upper_kick.crop(110, 111, 110 * i, 0);
-
+                }
 		// hurting anims
-  		for (int i = 0; i < 4; i++) 
+  		for (int i = 0; i < 4; i++) {
 			hit_stand_back[i] = ss_hit_stand_back.crop(77, 104, 77 * i, 0);
-
+                }
 		// ============================================ SPRITE SHEETS: KEN ============================================
 
 		SpriteSheet ss_crouch1          = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/crouch.png"));
@@ -196,7 +196,7 @@ public class Assets {
 		SpriteSheet ss_punch1           = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/punch.png"));
 		SpriteSheet ss_quick_punch1     = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/quick_punch.png"));
 		SpriteSheet ss_upper_kick1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/upper_kick.png"));
-		SpriteSheet ss_jump1			= new SpriteSheet(ImageLoader.loadImage("/textures/mafia/jump.png"));
+		SpriteSheet ss_jump1		= new SpriteSheet(ImageLoader.loadImage("/textures/mafia/jump.png"));
 		SpriteSheet ss_front_flip1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/front_flip.png"));
 		SpriteSheet ss_back_flip1       = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/back_flip.png"));
 		SpriteSheet ss_air_punch1       = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/air_punch.png"));
@@ -209,15 +209,15 @@ public class Assets {
 
 		// basic movement:
 
-		for (int i = 0; i < 6; i++) 
+		for (int i = 0; i < 6; i++) {
 			idle1[i] = ss_idle1.crop(57, 106, 57 * i, 0);
-
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			parry_f1[i] = ss_parry_front1.crop(70, 110, 70 * i, 0);
-
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			parry_b1[i] = ss_parry_back1.crop(70, 110, 70 * i, 0);
-
+                }
 		crouch1[0] = ss_crouch1.crop(54, 73, 0, 0);
 
 		// aerial moves 
@@ -226,49 +226,49 @@ public class Assets {
 		jump1[1] = ss_jump1.crop(61, 124, 0, 0);
 		jump1[2] = ss_jump1.crop(61, 124, 0, 0);
 		
-		for (int i = 3; i < 11; i++) 
+		for (int i = 3; i < 11; i++) {
 			jump1[i] = ss_jump1.crop(61, 124, 61 * (i - 2), 0);
-		
+                }
 	
-		for (int i = 0; i < 8; i++) 
+		for (int i = 0; i < 8; i++) {
 			front_flip1[i] = ss_front_flip1.crop(83, 125, 83 * i, 0);
-		
-		for (int i = 0; i < 8; i++) 
+                }
+		for (int i = 0; i < 8; i++) {
 			back_flip1[i] = ss_back_flip1.crop(83, 125, 83 * i, 0);
-		
+                }
 		// ground attacks
 
-		for (int i = 0; i < 8; i++) 
+		for (int i = 0; i < 8; i++) {
 			punch1[i] = ss_punch1.crop(103, 103, 103 * i, 0);
-
-		for (int i = 0; i < 4; i++) 
+                }
+		for (int i = 0; i < 4; i++) {
 			quick_punch1[i] = ss_quick_punch1.crop(95, 102, 95 * i, 0);
-
-		for (int i = 0; i < 3; i++) 
+                }
+		for (int i = 0; i < 3; i++) {
 			crouch_punch1[i] = ss_crouch_punch1.crop(89, 72, 89 * i, 0);
-
+                }
 		// ground kick
 
-		for (int i = 0; i < 5; i++) 
+		for (int i = 0; i < 5; i++) {
 			kick_low1[i] = ss_kick_low1.crop(118, 105, 118 * i, 0);
-
-		for (int i = 0; i < 10; i++) 
+                }
+		for (int i = 0; i < 10; i++) {
 			upper_kick1[i] = ss_upper_kick1.crop(135, 108, 135 * i, 0);
-		
+                }
 		// air attacks				
-		for (int i = 0; i < 7; i++) 
+		for (int i = 0; i < 7; i++) {
 			air_punch1[i] = ss_air_punch1.crop(84, 95, 84 * i, 0);
-				
-		for (int i = 0; i < 4; i++) 
+                }
+		for (int i = 0; i < 4; i++) {
 			punch_down1[i] = ss_punch_down1.crop(68, 88, 68 * i, 0);
-				
-		for (int i = 0; i < 6; i++) 
+                }
+		for (int i = 0; i < 6; i++) {
 			air_kick1[i] = ss_air_kick1.crop(106, 83, 106 * i, 0);
-
+                }
 		// hurt
 		
-		for (int i = 0; i < 4; i++) 
+		for (int i = 0; i < 4; i++) {
 			hit_stand_back1[i] = ss_hit_stand_back1.crop(79, 104, 79 * i, 0);
-
+                }
 	}
 }
