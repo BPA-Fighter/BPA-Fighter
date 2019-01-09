@@ -418,7 +418,7 @@ public class Mafia extends Creature {
 
 	public void collisions() {
 
-		if (game.getGameState().getRyuAttackBounds().intersects(getHitBounds())) {
+		if (game.getGameState().getIceGuyAttackBounds().intersects(getHitBounds())) {
 
 			if (!hurting) {
 				hurting = true;

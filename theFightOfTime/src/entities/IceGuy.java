@@ -416,7 +416,7 @@ public class IceGuy extends Creature {
 	public void collisions() {
 
 		// if rectangle of player collides with enemy rectangle
-		if (game.getGameState().getKenAttackBounds().intersects(getHitBounds())) {
+		if (game.getGameState().getMafiaAttackBounds().intersects(getHitBounds())) {
 
 			// if not already hurting...
 			if (!hurting) {

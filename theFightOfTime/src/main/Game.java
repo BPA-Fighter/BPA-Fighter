@@ -128,7 +128,7 @@ public class Game extends Canvas implements Runnable {
 		// print map selection
 		System.out.println("===========================");		
 		System.out.println("WELCOME! MAP SELECTION...");		
-		System.out.println("1. Forest\n2. Main\n3. Ryu");		
+		System.out.println("1. Forest\n2. Main\n3. IceGuy");		
 		System.out.println("===========================");		
 
 		// instantiate scanner, and randomizer and init vars

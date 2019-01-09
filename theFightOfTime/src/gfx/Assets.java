@@ -105,22 +105,22 @@ public class Assets {
 
 		// ============================================ SPRITE SHEETS: RYU ============================================
 
-		SpriteSheet ss_crouch          = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/crouch.png"));
-		SpriteSheet ss_crouch_punch    = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/crouch_punch.png"));
-		SpriteSheet ss_hit_stand_back  = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/hit_stand_b.png"));
-		SpriteSheet ss_idle            = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/idle.png"));
-		SpriteSheet ss_kick_low        = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/kick_low.png"));
-		SpriteSheet ss_parry_back      = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/parry_b.png"));
-		SpriteSheet ss_parry_front     = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/parry_f.png"));
-		SpriteSheet ss_punch           = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/punch.png"));
-		SpriteSheet ss_quick_punch     = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/quick_punch.png"));
-		SpriteSheet ss_upper_kick      = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/upper_kick.png"));
-		SpriteSheet ss_jump            = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/jump.png"));
-		SpriteSheet ss_front_flip      = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/front_flip.png"));
-		SpriteSheet ss_back_flip       = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/back_flip.png"));
-		SpriteSheet ss_air_punch       = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/air_punch.png"));
-		SpriteSheet ss_air_kick        = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/air_kick.png"));
-		SpriteSheet ss_punch_down      = new SpriteSheet(ImageLoader.loadImage("/textures/ryu/punch_down.png"));
+		SpriteSheet ss_crouch          = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/crouch.png"));
+		SpriteSheet ss_crouch_punch    = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/crouch_punch.png"));
+		SpriteSheet ss_hit_stand_back  = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/hit_stand_b.png"));
+		SpriteSheet ss_idle            = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/idle.png"));
+		SpriteSheet ss_kick_low        = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/kick_low.png"));
+		SpriteSheet ss_parry_back      = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/parry_b.png"));
+		SpriteSheet ss_parry_front     = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/parry_f.png"));
+		SpriteSheet ss_punch           = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/punch.png"));
+		SpriteSheet ss_quick_punch     = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/quick_punch.png"));
+		SpriteSheet ss_upper_kick      = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/upper_kick.png"));
+		SpriteSheet ss_jump            = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/jump.png"));
+		SpriteSheet ss_front_flip      = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/front_flip.png"));
+		SpriteSheet ss_back_flip       = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/back_flip.png"));
+		SpriteSheet ss_air_punch       = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/air_punch.png"));
+		SpriteSheet ss_air_kick        = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/air_kick.png"));
+		SpriteSheet ss_punch_down      = new SpriteSheet(ImageLoader.loadImage("/textures/iceGuy/punch_down.png"));
 
 		// ============================================ SPRITE CROPPING ============================================
 
@@ -186,22 +186,22 @@ public class Assets {
 
 		// ============================================ SPRITE SHEETS: KEN ============================================
 
-		SpriteSheet ss_crouch1          = new SpriteSheet(ImageLoader.loadImage("/textures/ken/crouch.png"));
-		SpriteSheet ss_crouch_punch1    = new SpriteSheet(ImageLoader.loadImage("/textures/ken/crouch_punch.png"));;
-		SpriteSheet ss_hit_stand_back1  = new SpriteSheet(ImageLoader.loadImage("/textures/ken/hit_stand_b.png"));
-		SpriteSheet ss_idle1            = new SpriteSheet(ImageLoader.loadImage("/textures/ken/idle.png"));
-		SpriteSheet ss_kick_low1        = new SpriteSheet(ImageLoader.loadImage("/textures/ken/kick_low.png"));
-		SpriteSheet ss_parry_back1      = new SpriteSheet(ImageLoader.loadImage("/textures/ken/parry_b.png"));
-		SpriteSheet ss_parry_front1     = new SpriteSheet(ImageLoader.loadImage("/textures/ken/parry_f.png"));
-		SpriteSheet ss_punch1           = new SpriteSheet(ImageLoader.loadImage("/textures/ken/punch.png"));
-		SpriteSheet ss_quick_punch1     = new SpriteSheet(ImageLoader.loadImage("/textures/ken/quick_punch.png"));
-		SpriteSheet ss_upper_kick1      = new SpriteSheet(ImageLoader.loadImage("/textures/ken/upper_kick.png"));
-		SpriteSheet ss_jump1			= new SpriteSheet(ImageLoader.loadImage("/textures/ken/jump.png"));
-		SpriteSheet ss_front_flip1      = new SpriteSheet(ImageLoader.loadImage("/textures/ken/front_flip.png"));
-		SpriteSheet ss_back_flip1       = new SpriteSheet(ImageLoader.loadImage("/textures/ken/back_flip.png"));
-		SpriteSheet ss_air_punch1       = new SpriteSheet(ImageLoader.loadImage("/textures/ken/air_punch.png"));
-		SpriteSheet ss_air_kick1        = new SpriteSheet(ImageLoader.loadImage("/textures/ken/air_kick.png"));
-		SpriteSheet ss_punch_down1      = new SpriteSheet(ImageLoader.loadImage("/textures/ken/punch_down.png"));
+		SpriteSheet ss_crouch1          = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/crouch.png"));
+		SpriteSheet ss_crouch_punch1    = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/crouch_punch.png"));;
+		SpriteSheet ss_hit_stand_back1  = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/hit_stand_b.png"));
+		SpriteSheet ss_idle1            = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/idle.png"));
+		SpriteSheet ss_kick_low1        = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/kick_low.png"));
+		SpriteSheet ss_parry_back1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/parry_b.png"));
+		SpriteSheet ss_parry_front1     = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/parry_f.png"));
+		SpriteSheet ss_punch1           = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/punch.png"));
+		SpriteSheet ss_quick_punch1     = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/quick_punch.png"));
+		SpriteSheet ss_upper_kick1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/upper_kick.png"));
+		SpriteSheet ss_jump1			= new SpriteSheet(ImageLoader.loadImage("/textures/mafia/jump.png"));
+		SpriteSheet ss_front_flip1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/front_flip.png"));
+		SpriteSheet ss_back_flip1       = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/back_flip.png"));
+		SpriteSheet ss_air_punch1       = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/air_punch.png"));
+		SpriteSheet ss_air_kick1        = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/air_kick.png"));
+		SpriteSheet ss_punch_down1      = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/punch_down.png"));
 
 		// ============================================ SPRITE CROPPING ============================================
 
