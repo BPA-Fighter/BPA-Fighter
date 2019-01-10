@@ -115,16 +115,6 @@ public class Game extends Canvas implements Runnable {
 		gameState = new GameState(this);
 		State.setState(gameState);
 		
-		// print out title to user
-		System.out.println(" ________  _________  ________  _______   _______  _________        ________ ___  ________  ___  ___  _________  _______   ________          ___  ___");
-		System.out.println("|\\   ____\\|\\___   ___|\\   __  \\|\\  ___ \\ |\\  ___ \\|\\___   ___\\     |\\  _____|\\  \\|\\   ____\\|\\  \\|\\  \\|\\___   ___|\\  ___ \\ |\\   __  \\        |\\  \\|\\  \\ ");
-		System.out.println("\\ \\  \\___|\\|___ \\  \\_\\ \\  \\|\\  \\ \\   __/|\\ \\   __/\\|___ \\  \\_|     \\ \\  \\__/\\ \\  \\ \\  \\___|\\ \\  \\\\\\  \\|___ \\  \\_\\ \\   __/|\\ \\  \\|\\  \\       \\ \\  \\ \\  \\  ");
-		System.out.println(" \\ \\_____  \\   \\ \\  \\ \\ \\   _  _\\ \\  \\_|/_\\ \\  \\_|/__  \\ \\  \\       \\ \\   __\\\\ \\  \\ \\  \\  __\\ \\   __  \\   \\ \\  \\ \\ \\  \\_|/_\\ \\   _  _\\       \\ \\  \\ \\  \\  ");
-		System.out.println("  \\|____|\\  \\   \\ \\  \\ \\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\_|\\ \\  \\ \\  \\       \\ \\  \\_| \\ \\  \\ \\  \\|\\  \\ \\  \\ \\  \\   \\ \\  \\ \\ \\  \\_|\\ \\ \\  \\\\  \\|       \\ \\  \\ \\  \\ ");
-		System.out.println("    ____\\_\\  \\   \\ \\__\\ \\ \\__\\\\ _\\\\ \\_______\\ \\_______\\  \\ \\__\\       \\ \\__\\   \\ \\__\\ \\_______\\ \\__\\ \\__\\   \\ \\__\\ \\ \\_______\\ \\__\\\\ _\\        \\ \\__\\ \\__\\");
-		System.out.println("   |\\_________\\   \\|__|  \\|__|\\|__|\\|_______|\\|_______|   \\|__|        \\|__|    \\|__|\\|_______|\\|__|\\|__|    \\|__|  \\|_______|\\|__|\\|__|        \\|__|\\|__|");
-		System.out.println("   \\|_________|                                                                                                                                           ");
-		
 		// print map selection
 		System.out.println("===========================");		
 		System.out.println("WELCOME! MAP SELECTION...");		
@@ -186,6 +176,7 @@ public class Game extends Canvas implements Runnable {
 	 * Minecraft: Notch's game loop
 	 * @link https://stackoverflow.com/questions/18283199/java-main-game-loop
 	 */
+        
 	
 	public void run() {
 		
@@ -285,9 +276,9 @@ public class Game extends Canvas implements Runnable {
 		/* ALL DRAWING HERE */
 		
 		// init maps
-		ImageIcon iceGuyStage    = new ImageIcon("iceGuy_stage.png");
-		ImageIcon mainStage   = new ImageIcon("main_stage.gif");
-		ImageIcon forestStage = new ImageIcon("forest_stage.gif");
+		ImageIcon iceGuyStage    = new ImageIcon("/images/iceGuy_stage.png");
+		ImageIcon mainStage   = new ImageIcon("/images/main_stage.gif");
+		ImageIcon forestStage = new ImageIcon("/images/forest_stage.gif");
 		
 		
 		// decision making: if player chooses a map (as def'd in start() method), draw that map 
