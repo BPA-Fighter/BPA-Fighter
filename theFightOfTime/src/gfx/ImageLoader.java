@@ -29,9 +29,11 @@ public class ImageLoader {
                 //return null;
             }
 		try {
-			return ImageIO.read(ImageLoader.class.getResource(path));
+			return ImageIO.read(ImageLoader.class.getResource("/res/" + path));
+                        //getClass().getResource("/res/" + path)
 		} catch (Exception e) {
-			e.printStackTrace();
+                    System.out.println("Unknown error with file '" + path + "'");
+			//e.printStackTrace();
 		}
                 
 		return null;

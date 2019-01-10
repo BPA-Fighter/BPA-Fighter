@@ -34,6 +34,7 @@ public class SpriteSheet {
 	 */
 	
 	public BufferedImage crop(int width, int height, int x, int y) {
+            System.out.println("Int x: " + x + " Int y: " + y + " Int width: " + width + " Int height: " + height);
 		return sheet.getSubimage(x, y, width, height);
 	}
 
