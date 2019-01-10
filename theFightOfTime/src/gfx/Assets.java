@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 
 public class Assets {
 
-	
+    
 	// ============================================ SPRITE SHEETS: RYU ============================================
 	
 	
@@ -184,8 +184,8 @@ public class Assets {
   		for (int i = 0; i < 4; i++) {
 			hit_stand_back[i] = ss_hit_stand_back.crop(77, 104, 77 * i, 0);
                 }
-		// ============================================ SPRITE SHEETS: KEN ============================================
-
+                // ============================================ SPRITE SHEETS: KEN ============================================
+                
 		SpriteSheet ss_crouch1          = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/crouch.png"));
 		SpriteSheet ss_crouch_punch1    = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/crouch_punch.png"));;
 		SpriteSheet ss_hit_stand_back1  = new SpriteSheet(ImageLoader.loadImage("/textures/mafia/hit_stand_b.png"));

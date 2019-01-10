@@ -108,7 +108,7 @@ public class Game extends Canvas implements Runnable {
 		// the program is running...
 		running = true;		
 		
-		// pre-load assets
+		// pre-load assets                
 		Assets.init();
 			
 		// states

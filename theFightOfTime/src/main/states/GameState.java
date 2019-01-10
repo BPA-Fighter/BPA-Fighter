@@ -19,7 +19,7 @@ import gfx.*;
 import main.Game;
 
 public class GameState extends State {
-	
+
 	// init iceGuy, mafia
 	private IceGuy iceGuy;
 	private Mafia mafia;
@@ -27,6 +27,7 @@ public class GameState extends State {
 	// constructor
 	public GameState(Game game) {
 		super(game);
+System.out.println("We made it here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		
 		// create instance of iceGuy, mafia 
 		iceGuy = new IceGuy(game, 60, 280);
@@ -51,7 +52,7 @@ public class GameState extends State {
 
 	@Override
 	public void render(Graphics g) {
-				
+			// So as a heads up the code is not even getting to this part. 	
 		// get images for ui
 		ImageIcon healthBar = new ImageIcon("healthBar.png");
 		ImageIcon iceGuyFont = new ImageIcon("iceGuyFont.png");
