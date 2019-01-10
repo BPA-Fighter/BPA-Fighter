@@ -6,10 +6,6 @@
 
 package main;
 
-/**
- *
- * @author Joshua Burton
- */
 public class GUI {
 
 	//I'm changing this
