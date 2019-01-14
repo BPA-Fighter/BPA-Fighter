@@ -171,11 +171,6 @@ public class Game extends Canvas implements Runnable {
 		// if program is stopped, running is false
 		running = false;
 	}
-	
-	/**
-	 * Minecraft: Notch's game loop
-	 * @link https://stackoverflow.com/questions/18283199/java-main-game-loop
-	 */
         
 	
 	public void run() {
@@ -276,21 +271,24 @@ public class Game extends Canvas implements Runnable {
 		/* ALL DRAWING HERE */
 		
 		// init maps
-		ImageIcon iceGuyStage    = new ImageIcon("/images/iceGuy_stage.png");
-		ImageIcon mainStage   = new ImageIcon("/images/main_stage.gif");
-		ImageIcon forestStage = new ImageIcon("/images/forest_stage.gif");
+		ImageIcon temp1Stage    = new ImageIcon("/images/temp1.png");
+		ImageIcon temp2Stage   = new ImageIcon("/images/temp2.png");
+		ImageIcon temp3Stage = new ImageIcon("/images/temp3.png");
 		
 		
 		// decision making: if player chooses a map (as def'd in start() method), draw that map 
-		if (map == 1)
-			g.drawImage(forestStage.getImage(), -900, -220, forestStage.getIconWidth() * 2, forestStage.getIconHeight() * 2,null);
-
-		if (map == 2)
-			g.drawImage(mainStage.getImage(), -67, -67, null);
-	
-		if (map == 3)
-			g.drawImage(iceGuyStage.getImage(), -212, 30, iceGuyStage.getIconWidth() * Game.SCALE, iceGuyStage.getIconHeight() * Game.SCALE,null);
-		
+		if (map == 1) {
+                    System.out.println("Stage 1");
+			g.drawImage(temp1Stage.getImage(), -900, -220, temp1Stage.getIconWidth() * 2, temp1Stage.getIconHeight() * 2,null);
+                }
+		if (map == 2) {
+                    System.out.println("Stage 2");
+			g.drawImage(temp2Stage.getImage(), -67, -67, null);
+                }
+		if (map == 3) {
+                    System.out.println("Stage 3");
+			g.drawImage(temp3Stage.getImage(), -212, 30, temp3Stage.getIconWidth() * Game.SCALE, temp3Stage.getIconHeight() * Game.SCALE,null);
+                }
 		
 		// if current state exist, then render		
 		if (State.getState() != null) {		
