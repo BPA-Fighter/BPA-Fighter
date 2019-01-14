@@ -274,7 +274,7 @@ public class Game extends Canvas implements Runnable {
 		// init maps
 		ImageIcon temp1Stage    = new ImageIcon("/images/temp1.png");
 		ImageIcon temp2Stage   = new ImageIcon("/images/temp2.png");
-		ImageIcon temp3Stage = new ImageIcon("/images/temp3.png");
+		ImageIcon temp3Stage = new ImageIcon("theFightOfTime/images/temp3.png");
 		
 		
 		// decision making: if player chooses a map (as def'd in start() method), draw that map 
