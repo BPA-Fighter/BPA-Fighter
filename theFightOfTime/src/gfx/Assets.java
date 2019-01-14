@@ -144,45 +144,57 @@ public class Assets {
 		
 		for (int i = 3; i < 11; i++) {
 			jump[i] = ss_jump.crop(70, 154, 70 * (i - 2), 0);
+                        System.out.println("The frame count for jump: "+ i);
                 }
 		
 		for (int i = 0; i < 8; i++) {
 			front_flip[i] = ss_front_flip.crop(88, 129, 88 * i, 0);
+                        System.out.println("The frame count for frontFlip: "+ i);
                 }
 		for (int i = 0; i < 8; i++) {
 			back_flip[i] = ss_back_flip.crop(88, 129, 88 * i, 0);
+                        System.out.println("The frame count for BackFlip: "+ i);
                 }
 		// ground attack:
 		for (int i = 0; i < 6; i++) {
 			punch[i] = ss_punch.crop(101, 102, 101 * i, 0);
+                        System.out.println("The frame count for punch: "+ i);
                 }
 		for (int i = 0; i < 3; i++) {
 			quick_punch[i] = ss_quick_punch.crop(94, 102, 94 * i, 0);
+                        System.out.println("The frame count for quick_Punch: "+ i);
                 }
 		// crouch attack	
 		for (int i = 0; i < 3; i++) {
-			crouch_punch[i] = ss_crouch_punch.crop(86, 72, 86 * i, 0);	
+			crouch_punch[i] = ss_crouch_punch.crop(86, 72, 86 * i, 0);
+                        System.out.println("The frame count for crouch_Punch: "+ i);
                 }
 		// air attacks				
 		for (int i = 0; i < 6; i++) {
 			air_punch[i] = ss_air_punch.crop(83, 95, 83 * i, 0);
+                        System.out.println("The frame count for airPunch: "+ i);
                 }
 		for (int i = 0; i < 4; i++) {
 			punch_down[i] = ss_punch_down.crop(75, 90, 75 * i, 0);
+                        System.out.println("The frame count for punchDown: "+ i);
                 }
 		for (int i = 0; i < 5; i++) {
 			air_kick[i] = ss_air_kick.crop(99, 94, 99 * i, 0);
+                        System.out.println("The frame count for airKick: "+ i);
                 }
 		// ground kick
 		for (int i = 0; i < 5; i++) {
 			kick_low[i] = ss_kick_low.crop(115, 111, 115 * i, 0);
+                        System.out.println("The frame count for kickLow: "+ i);
                 }
 		for (int i = 0; i < 9; i++) {
 			upper_kick[i] = ss_upper_kick.crop(110, 111, 110 * i, 0);
+                        System.out.println("The frame count for upperKick: "+ i);
                 }
 		// hurting anims
   		for (int i = 0; i < 4; i++) {
 			hit_stand_back[i] = ss_hit_stand_back.crop(77, 104, 77 * i, 0);
+                        System.out.println("The frame count for Hit_Stand_Back: "+ i);
                 }
                 // ============================================ SPRITE SHEETS: KEN ============================================
                 
@@ -211,12 +223,15 @@ public class Assets {
 
 		for (int i = 0; i < 6; i++) {
 			idle1[i] = ss_idle1.crop(57, 106, 57 * i, 0);
+                        System.out.println("The frame count for idel: "+ i);
                 }
 		for (int i = 0; i < 8; i++) {
 			parry_f1[i] = ss_parry_front1.crop(70, 110, 70 * i, 0);
+                        System.out.println("The frame count for parryF1: "+ i);
                 }
 		for (int i = 0; i < 8; i++) {
 			parry_b1[i] = ss_parry_back1.crop(70, 110, 70 * i, 0);
+                        System.out.println("The frame count for parry_b1: "+ i);
                 }
 		crouch1[0] = ss_crouch1.crop(54, 73, 0, 0);
 
