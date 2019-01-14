@@ -6,7 +6,9 @@
 
 package main;
 
+import javax.swing.JButton;
+
 public class GUI {
-        //can u see this
-	//I'm changing this
+       JButton start = new JButton();
+       
 }
