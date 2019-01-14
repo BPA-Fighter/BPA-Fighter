@@ -99,6 +99,7 @@ public class IceGuy extends Creature {
 		health = 100;
 
 		// movement
+                System.out.println("This is where the rates are sent for the animations. Movement should be 100,100,100,100,85,120,120. Ground attacks should be 100,100,75,100. Couch should be 50, air should be all at 100, finally pain should be at 100 ");
 		idle 	   = new Animation(100, Assets.idle);
 		parry_f    = new Animation(100, Assets.parry_f);
 		parry_b    = new Animation(100, Assets.parry_b);

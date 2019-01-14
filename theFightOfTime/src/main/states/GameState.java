@@ -26,7 +26,12 @@ public class GameState extends State {
 	
 	// constructor
 	public GameState(Game game) {
+<<<<<<< HEAD
+		super(game);
+		
+=======
 		super(game);		
+>>>>>>> 602fcdbb041aa9cec52b97bea6aafdf36c6ebf76
 		// create instance of iceGuy, mafia 
 		iceGuy = new IceGuy(game, 60, 280);
 		mafia = new Mafia(game, 224 * 2, 280);

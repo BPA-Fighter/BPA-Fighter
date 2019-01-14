@@ -52,6 +52,7 @@ public class Game extends Canvas implements Runnable {
 	// tick variables
 	public boolean running = false;
 	public int tickCount = 0;
+        public int sleepCounter = 0; 
 	
 	// graphics
 	private Graphics g;
@@ -211,6 +212,8 @@ public class Game extends Canvas implements Runnable {
 			// sleep program so that not to many frames are produced (reduce lag)
 			try {
 				Thread.sleep(2);
+                                System.out.println("This is where the Tread.sleep is called. It has been called "+ sleepCounter +" many times");
+                                sleepCounter ++; 
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
