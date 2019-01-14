@@ -6,9 +6,10 @@
 
 package main;
 
-import javax.swing.JButton;
+/**
+ *
+ * @author Grant Zelasko
+ */
+public class music {
 
-public class GUI {
-       JButton start = new JButton();
-       
 }
