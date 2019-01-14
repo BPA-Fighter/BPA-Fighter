@@ -27,7 +27,6 @@ public class GameState extends State {
 	// constructor
 	public GameState(Game game) {
 		super(game);
-System.out.println("We made it here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		
 		// create instance of iceGuy, mafia 
 		iceGuy = new IceGuy(game, 60, 280);
