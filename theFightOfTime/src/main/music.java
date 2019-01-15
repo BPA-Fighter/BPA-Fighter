@@ -16,7 +16,8 @@ import javax.sound.sampled.Clip;
  */
 public class music {
     
-     String soundName;
+    public void snowMusic() {
+String soundName = "SnowMusic.wav";
  try {
             //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
@@ -26,3 +27,48 @@ public class music {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+} 
+    
+      public void jazzMusic() {
+String soundName = "JazzMusic.wav";
+ try {
+            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+} 
+      
+         public void fleshyPunch() {
+String soundName = "fleshyPunch.wav";
+ try {
+            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+} 
+         
+               public void icePunch() {
+String soundName = "icePunch.wav";
+ try {
+            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+} 
+    
+}
+
+
+

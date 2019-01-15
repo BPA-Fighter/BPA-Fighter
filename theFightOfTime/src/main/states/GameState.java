@@ -17,6 +17,7 @@ import entities.IceGuy;
 import entities.Mafia;
 import gfx.*;
 import main.Game;
+import main.music;
 
 public class GameState extends State {
 
@@ -89,6 +90,7 @@ public class GameState extends State {
 		} else if (iceGuy.getHealth() <= 0) {
 			// win screen
 			String mafiaWin = "MAFIA WINS THE GAME!";
+                         music.jazzMusic();
 			g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
 			g.setColor(Color.WHITE);
 			int width = g.getFontMetrics().stringWidth(mafiaWin);
