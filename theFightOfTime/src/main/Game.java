@@ -281,6 +281,7 @@ public class Game extends Canvas implements Runnable {
 		if (map == 1) {
                     System.out.println("Stage 1");
 			g.drawImage(temp1Stage.getImage(), -900, -220, temp1Stage.getIconWidth() * 2, temp1Stage.getIconHeight() * 2,null);
+                       
                 }
 		if (map == 2) {
                     System.out.println("Stage 2");

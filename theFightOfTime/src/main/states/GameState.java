@@ -17,6 +17,7 @@ import entities.IceGuy;
 import entities.Mafia;
 import gfx.*;
 import main.Game;
+import main.music;
 
 public class GameState extends State {
 
