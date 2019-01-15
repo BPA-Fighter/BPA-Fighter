@@ -6,7 +6,7 @@
 
 package main;
 //TO DO LIST PELEASE ADD WHEN YOU HOP OFF
-// Johsua: Finish the print statments
+// Johsua: 
 /**
  *
  * @author Time Crunchers
