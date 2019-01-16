@@ -51,7 +51,6 @@ public class GameState extends State {
 
 	@Override
 	public void render(Graphics g) {
-			// So as a heads up the code is not even getting to this part. 	
 		// get images for ui
 		ImageIcon healthBar = new ImageIcon("healthBar.png");
 		ImageIcon iceGuyFont = new ImageIcon("iceGuyFont.png");
