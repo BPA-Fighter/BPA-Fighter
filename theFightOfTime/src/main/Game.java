@@ -44,6 +44,8 @@ import managers.KeyManager;
 @SuppressWarnings({ "unused", "serial" })
 public class Game extends Canvas implements Runnable {
 	
+    
+    
 	// declare constants
 	public static final String TITLE  = "The Fight Of Time";
 	public static final int    WIDTH  = 256;
