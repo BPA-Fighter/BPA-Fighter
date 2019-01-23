@@ -8,16 +8,17 @@ package main.states;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
 import entities.IceGuy;
 import entities.Mafia;
-import gfx.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import main.Game;
-import main.music;
 
 public class GameState extends State {
 
@@ -101,6 +102,30 @@ public class GameState extends State {
 	public void music() {
 		// empty for now because Java 8 API issues on school computers
 	}
+        
+        public void fileWrite() {
+            String fileName = "outputFile.txt"; // File you want to write to (will overwrite file)
+try {
+    // During testing inside NetBeans, the output txt file will save in the build Folder inside the
+    // Project Folder inside the BPA ID Folder.  When testing the .jar, it will save in the location
+    // of the .jar file
+File jarFile = new File(Game.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+fileName = jarFile.getParent() + File.separator + fileName;  // File.separator is the same as a "/"
+
+    FileWriter fileWriter = new FileWriter(fileName);
+    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); // Wraps FileWriter to write strings
+    // Write whatever you need here...but newlines are not automatic
+    bufferedWriter.write("Ice guys health: " + iceGuy.getHealth());
+    bufferedWriter.write("Mafia guys health: " + mafia.getHealth());
+    fileWriter.close();
+} catch (IOException ex) {
+    System.out.println("Error writing to file '" + fileName + "'");
+} catch (Exception ex) {
+    System.err.println(ex);
+}
+// Make sure to use the above catch statements!
+
+        }
 	
 	// GETTERS AND SETTERS:
 	
