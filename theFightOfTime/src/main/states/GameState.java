@@ -117,6 +117,9 @@ fileName = jarFile.getParent() + File.separator + fileName;  // File.separator i
     // Write whatever you need here...but newlines are not automatic
     bufferedWriter.write("Ice guys health: " + iceGuy.getHealth());
     bufferedWriter.write("Mafia guys health: " + mafia.getHealth());
+    bufferedWriter.write("Current tick: " + game.tickCounter());
+    bufferedWriter.write("Round time: "); // fpr when we have or timer or when I find it. 
+    
     fileWriter.close();
 } catch (IOException ex) {
     System.out.println("Error writing to file '" + fileName + "'");

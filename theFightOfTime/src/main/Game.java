@@ -323,4 +323,8 @@ public class Game extends Canvas implements Runnable {
 	public State getGameState() {
 		return gameState;
 	}
+        
+        public int tickCounter(){
+           return tickCount;   
+        }
 }
