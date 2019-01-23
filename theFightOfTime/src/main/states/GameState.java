@@ -115,10 +115,11 @@ fileName = jarFile.getParent() + File.separator + fileName;  // File.separator i
     FileWriter fileWriter = new FileWriter(fileName);
     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); // Wraps FileWriter to write strings
     // Write whatever you need here...but newlines are not automatic
-    bufferedWriter.write("Ice guys health: " + iceGuy.getHealth());
+    bufferedWriter.write("Ice guy;s health: " + iceGuy.getHealth());
     bufferedWriter.write("Mafia guys health: " + mafia.getHealth());
     bufferedWriter.write("Current tick: " + game.tickCounter());
-    bufferedWriter.write("Round time: "); // fpr when we have or timer or when I find it. 
+    bufferedWriter.write("Round time: " ); // for when we have or timer or when I find it. 
+    bufferedWriter.write("Ice guy's wins: " ); // for when we have the win counter or for when I find it. 
     
     fileWriter.close();
 } catch (IOException ex) {
