@@ -12,31 +12,24 @@ package main;
  * @author Time Crunchers
  *
  */
-import java.io.File;
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 import gfx.Assets;
-import gfx.ImageLoader;
-import gfx.SpriteSheet;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.Timer;
 import main.states.GameState;
 import main.states.State;
 import managers.KeyManager;
@@ -69,12 +62,13 @@ public class Game extends Canvas implements Runnable {
 	// init jFrame
 	private JFrame frame;
 	
-	// init scanner, and random
+	// init scanner,and random
 	private Scanner sc;
-	private Random rand;
+	private Random rand; 
 	
 	// int map
 	private int map = 0;
+        int time; 
 	
 	public Game() {
 	
@@ -311,6 +305,36 @@ public class Game extends Canvas implements Runnable {
 		game.start();
 	}
 	
+        
+        // set up a timer to call this from regularly
+        public static void fileWritte() {
+            String fileName = "outputFile.txt"; // File you want to write to (will overwrite file)
+try {
+    // During testing inside NetBeans, the output txt file will save in the build Folder inside the
+    // Project Folder inside the BPA ID Folder.  When testing the .jar, it will save in the location
+    // of the .jar file
+File jarFile = new File(Game.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+fileName = jarFile.getParent() + File.separator + fileName;  // File.separator is the same as a "/"
+
+    FileWriter fileWriter = new FileWriter(fileName);
+    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); // Wraps FileWriter to write strings
+    // Write whatever you need here...but newlines are not automatic
+    bufferedWriter.write("Hello");
+    bufferedWriter.write(" World.");
+    bufferedWriter.newLine(); // write() does not automatically add newline
+    bufferedWriter.write("This is writing");
+    bufferedWriter.write(" text to the file.");
+    bufferedWriter.close();  // Always close files!!
+    fileWriter.close();
+} catch (IOException ex) {
+    System.out.println("Error writing to file '" + fileName + "'");
+} catch (Exception ex) {
+    System.err.println(ex);
+}
+// Make sure to use the above catch statements!
+
+        }
+        
 	// GETTERS AND SETTERS
 	
 	/**
