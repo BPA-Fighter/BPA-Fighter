@@ -427,19 +427,16 @@ public class IceGuy extends Creature {
 				lastTimer = System.currentTimeMillis();
 				hurting = true;
 				health-=2;
-         /*                      String soundName = "OneLastDrink.wav";
-  try {
+      String soundName = "icePunch.wav";
+ try {
             //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
         } catch (Exception e) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.err.println(e.getMessage());
-           
-                                }  
-                                */  
+        }
 
 			}
 
