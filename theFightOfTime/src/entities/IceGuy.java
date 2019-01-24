@@ -6,16 +6,19 @@
 
 package entities;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import gfx.Animation;
 import gfx.Assets;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import main.Game;
 
 public class IceGuy extends Creature {
@@ -424,6 +427,19 @@ public class IceGuy extends Creature {
 				lastTimer = System.currentTimeMillis();
 				hurting = true;
 				health-=2;
+                               String soundName = "OneLastDrink.wav";
+  try {
+            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.err.println(e.getMessage());
+           
+        }
+
 			}
 
 			// freeze..

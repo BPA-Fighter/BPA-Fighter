@@ -118,7 +118,7 @@ public class Game extends Canvas implements Runnable {
 		System.out.println("1. Forest\n2. Main\n3. IceGuy");		
 		System.out.println("===========================");	
                 
-                GUI.main(gArgs);
+                //GUI.main(gArgs);
 
 		// instantiate scanner, and randomizer and init vars
 		sc = new Scanner(System.in);	
