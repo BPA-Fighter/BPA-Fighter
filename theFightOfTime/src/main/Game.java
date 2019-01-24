@@ -18,7 +18,6 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -27,9 +26,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import gfx.Assets;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.util.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 import main.states.GameState;
 import main.states.State;
 import managers.KeyManager;
@@ -37,6 +36,8 @@ import managers.KeyManager;
 @SuppressWarnings({ "unused", "serial" })
 public class Game extends Canvas implements Runnable {
 	
+        public Timer counter;
+        public int time = 90; 
     
         static String[] gArgs;
     
@@ -302,7 +303,30 @@ public class Game extends Canvas implements Runnable {
 		
 		g.dispose();
 		bs.show();
-	}	
+	}
+        
+        public void time(){
+           counter = new javax.swing.Timer(30, new ActionListener() {                     
+   @Override
+   public void actionPerformed(ActionEvent e) {
+        time --; 
+        
+        try{
+            Thread.sleep(1000);
+        }catch (Exception ex){
+           
+        }
+        check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
+   }
+});
+           System.out.println("Time "+ time);
+        }
+        
+         public void check(int time){ 
+        if(time<=0){
+            counter.stop(); // this is what stops the timer. Oh and by the way i hope the button is big enough for you xD
+        }
+    }
 	
 	public static void main(String[] args) throws IOException {
 		Game game = new Game();
