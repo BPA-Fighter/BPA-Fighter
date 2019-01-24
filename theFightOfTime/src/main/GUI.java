@@ -6,6 +6,7 @@
 
 package main;
 
+import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import javafx.application.Application;
@@ -28,7 +29,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javax.swing.JButton;
 
 public class GUI extends Application {
     
@@ -97,8 +97,7 @@ public class GUI extends Application {
 
     private static class ContentFrame extends StackPane {
         public ContentFrame(Node content) {
-            setAlignment(Pos.CENTER);
-
+            setAlignment(Pos.CENTER); 
             getChildren().addAll(content);
         }
     }
@@ -136,7 +135,7 @@ public class GUI extends Application {
                 script.run();
         }
     }
-
+    
     private static class TriCircle extends Parent {
         public TriCircle() {
             Shape shape1 = Shape.subtract(new Circle(5), new Circle(2));
