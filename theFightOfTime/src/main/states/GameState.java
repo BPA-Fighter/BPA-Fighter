@@ -18,10 +18,19 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Shape;
+import main.GUI;
 import main.Game;
 
 public class GameState extends State {
 
+        private VBox menuBox;
+    
 	// init iceGuy, mafia
 	private IceGuy iceGuy;
 	private Mafia mafia;
@@ -94,6 +103,11 @@ public class GameState extends State {
 			g.setColor(Color.WHITE);
 			int width = g.getFontMetrics().stringWidth(mafiaWin);
 			g.drawString(mafiaWin, Game.WIDTH - width/2, Game.HEIGHT);
+                        menuBox = new VBox(10,
+                new GUI.MenuItem("Main Menu"));
+        menuBox.setAlignment(Pos.TOP_CENTER);
+        menuBox.setTranslateX(length/3);
+        menuBox.setTranslateY(height/3);
 		}
 		
 	}
@@ -130,6 +144,27 @@ fileName = jarFile.getParent() + File.separator + fileName;  // File.separator i
 // Make sure to use the above catch statements!
 
         }
+        
+        
+        private static class TriCircle extends Parent {
+        public TriCircle() {
+            Shape shape1 = Shape.subtract(new Circle(5), new Circle(2));
+            shape1.setFill(javafx.scene.paint.Color.RED);
+
+            Shape shape2 = Shape.subtract(new Circle(5), new Circle(2));
+            shape2.setFill(javafx.scene.paint.Color.BLUE);
+            shape2.setTranslateX(5);
+
+            Shape shape3 = Shape.subtract(new Circle(5), new Circle(2));
+            shape3.setFill(javafx.scene.paint.Color.GREEN);
+            shape3.setTranslateX(2.5);
+            shape3.setTranslateY(-5);
+
+            getChildren().addAll(shape1, shape2, shape3);
+
+            setEffect(new GaussianBlur(2));
+        }
+    }
 	
 	// GETTERS AND SETTERS:
 	
