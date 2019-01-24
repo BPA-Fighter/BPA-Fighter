@@ -38,6 +38,7 @@ import managers.KeyManager;
 public class Game extends Canvas implements Runnable {
 	
     
+        static String[] gArgs;
     
 	// declare constants
 	public static final String TITLE  = "The Fight Of Time";
@@ -115,7 +116,9 @@ public class Game extends Canvas implements Runnable {
 		System.out.println("===========================");		
 		System.out.println("WELCOME! MAP SELECTION...");		
 		System.out.println("1. Forest\n2. Main\n3. IceGuy");		
-		System.out.println("===========================");		
+		System.out.println("===========================");	
+                
+                GUI.main(gArgs);
 
 		// instantiate scanner, and randomizer and init vars
 		sc = new Scanner(System.in);	
@@ -303,6 +306,7 @@ public class Game extends Canvas implements Runnable {
 	
 	public static void main(String[] args) throws IOException {
 		Game game = new Game();
+                gArgs = args;
 		game.start();
         }
         

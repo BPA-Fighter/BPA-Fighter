@@ -31,7 +31,8 @@ import javafx.stage.Stage;
 import javax.swing.JButton;
 
 public class GUI extends Application {
-       private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
+    
+    private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
     private static final Font FONT2 = Font.font("", FontWeight.BOLD, 25);
 
     private VBox menuBox;
@@ -39,8 +40,8 @@ public class GUI extends Application {
 
     private int messages = 0;
     
-    int length = 600;
-    int height = 300;
+    int length = 256 * 2;
+    int height = 224 * 2;
 
     private ScheduledExecutorService bgThread = Executors.newSingleThreadScheduledExecutor();
 
@@ -175,6 +176,13 @@ public class GUI extends Application {
 
             if (event.getCode() == KeyCode.ENTER) {
                 getMenuItem(currentItem).activate();
+                if (currentItem == 0) {
+                    System.out.println("NORMAL");
+                } else if (currentItem == 1) {
+                    System.out.println("HARD");
+                } else if (currentItem == 2) {
+                    System.out.println("INSTRUCTIONS");
+                }
             }
         });
 
