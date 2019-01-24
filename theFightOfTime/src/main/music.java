@@ -29,8 +29,8 @@ String soundName = "SnowMusic.wav";
         }
 } 
     
-      public void jazzMusic() {
-String soundName = "JazzMusic.wav";
+      public   void jazzMusic() {
+String soundName = "OneLastDrink.wav";
  try {
             //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));

@@ -18,7 +18,6 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
@@ -27,9 +26,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import gfx.Assets;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.util.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.Timer;
 import main.states.GameState;
 import main.states.State;
 import managers.KeyManager;
@@ -37,6 +39,8 @@ import managers.KeyManager;
 @SuppressWarnings({ "unused", "serial" })
 public class Game extends Canvas implements Runnable {
 	
+        public Timer counter;
+        public int time = 90; 
     
         static String[] gArgs;
     
@@ -71,7 +75,25 @@ public class Game extends Canvas implements Runnable {
 	private int map = 0; 
 	
 	public Game() {
+<<<<<<< HEAD
+	GUI.main(gArgs);
+=======
+            
+                                     String soundName = "OneLastDrink.wav";
+			  try {
+                            
+                              //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.err.println(e.getMessage());
+           
+        }
 	
+>>>>>>> 5656945f14a8d636236f58352875488c68d0e38a
 		// init frame properties
 		frame = new JFrame(TITLE);
 		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);		
@@ -118,7 +140,6 @@ public class Game extends Canvas implements Runnable {
 		System.out.println("1. Forest\n2. Main\n3. IceGuy");		
 		System.out.println("===========================");	
                 
-                GUI.main(gArgs);
 
 		// instantiate scanner, and randomizer and init vars
 		sc = new Scanner(System.in);	
@@ -221,7 +242,7 @@ public class Game extends Canvas implements Runnable {
 				render();
 
 			}
-			
+
 			// if one second has passed...
 			if (System.currentTimeMillis() - lastTimer > 1000) {
 				// increment last timer, output frames to user
@@ -281,6 +302,8 @@ public class Game extends Canvas implements Runnable {
 		if (map == 1) {
                     System.out.println("Stage 1");
 			g.drawImage(temp1Stage.getImage(), -900, -220, temp1Stage.getIconWidth() * 2, temp1Stage.getIconHeight() * 2,null);
+       
+
                        
                 }
 		if (map == 2) {
@@ -302,7 +325,30 @@ public class Game extends Canvas implements Runnable {
 		
 		g.dispose();
 		bs.show();
-	}	
+	}
+        
+        public void time(){
+           counter = new javax.swing.Timer(30, new ActionListener() {                     
+   @Override
+   public void actionPerformed(ActionEvent e) {
+        time --; 
+        
+        try{
+            Thread.sleep(1000);
+        }catch (Exception ex){
+           
+        }
+        check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
+   }
+});
+           System.out.println("Time "+ time);
+        }
+        
+         public void check(int time){ 
+        if(time<=0){
+            counter.stop(); // this is what stops the timer. Oh and by the way i hope the button is big enough for you xD
+        }
+    }
 	
 	public static void main(String[] args) throws IOException {
 		Game game = new Game();
