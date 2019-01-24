@@ -32,6 +32,9 @@ import javafx.stage.Stage;
 
 public class GUI extends Application {
     
+    int choice = -1;
+    
+    
     private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
     private static final Font FONT2 = Font.font("", FontWeight.BOLD, 25);
 
@@ -174,14 +177,18 @@ public class GUI extends Application {
             }
 
             if (event.getCode() == KeyCode.ENTER) {
-                getMenuItem(currentItem).activate();
+                
                 if (currentItem == 0) {
                     System.out.println("NORMAL");
+                    choice = 0;
                 } else if (currentItem == 1) {
                     System.out.println("HARD");
+                    choice = 1;
                 } else if (currentItem == 2) {
                     System.out.println("INSTRUCTIONS");
+                    choice = 2;
                 }
+                getMenuItem(currentItem).activate();
             }
         });
 
@@ -190,6 +197,10 @@ public class GUI extends Application {
             bgThread.shutdownNow();
         });
         primaryStage.show();
+    }
+    
+    public int getChoice() {
+        return choice;
     }
 
     public static void main(String[] args) {

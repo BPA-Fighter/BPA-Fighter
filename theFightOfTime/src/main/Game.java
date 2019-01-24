@@ -6,7 +6,6 @@
 
 package main;
 //TO DO LIST PELEASE ADD WHEN YOU HOP OFF
-// Johsua: 
 /**
  *
  * @author Time Crunchers
@@ -49,6 +48,7 @@ public class Game extends Canvas implements Runnable {
 	public static final int    WIDTH  = 256;
 	public static final int    HEIGHT = 224;
 	public static final int    SCALE  = 2;
+        int choice = -1;
 	
 	// tick variables
 	public boolean running = false;
@@ -91,6 +91,7 @@ public class Game extends Canvas implements Runnable {
            
         }
 	
+        
 		// init frame properties
 		frame = new JFrame(TITLE);
 		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);		
@@ -121,6 +122,10 @@ public class Game extends Canvas implements Runnable {
 
 	public synchronized void start() throws IOException {
 		
+            GUI.main(gArgs);
+//            choice = GUI.getChoice();
+            
+            
 		// the program is running...
 		running = true;		
 		
