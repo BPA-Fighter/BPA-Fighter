@@ -75,9 +75,7 @@ public class Game extends Canvas implements Runnable {
 	private int map = 0; 
 	
 	public Game() {
-<<<<<<< HEAD
-	GUI.main(gArgs);
-=======
+
             
                                      String soundName = "OneLastDrink.wav";
 			  try {
@@ -93,7 +91,6 @@ public class Game extends Canvas implements Runnable {
            
         }
 	
->>>>>>> 5656945f14a8d636236f58352875488c68d0e38a
 		// init frame properties
 		frame = new JFrame(TITLE);
 		frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);		
