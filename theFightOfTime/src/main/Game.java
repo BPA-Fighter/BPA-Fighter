@@ -76,7 +76,7 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
 
-        rNumber = new Random();
+        rNumber = new Random(); 
         
         int audioFileNumber = 1 + rNumber.nextInt(2);
         System.out.println(audioFileNumber);
@@ -139,7 +139,7 @@ public class Game extends Canvas implements Runnable {
      */
     public synchronized void start() throws IOException {
 
-        GUI.main(gArgs);
+       // GUI.main(gArgs);
 //            choice = GUI.getChoice();
 
         // the program is running...
