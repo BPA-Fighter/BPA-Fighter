@@ -28,6 +28,9 @@ import javax.swing.JFrame;
 import gfx.Assets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.Timer;
 import main.states.GameState;
 import main.states.State;
@@ -72,6 +75,20 @@ public class Game extends Canvas implements Runnable {
 	private int map = 0; 
 	
 	public Game() {
+            
+                                     String soundName = "OneLastDrink.wav";
+			  try {
+                            
+                              //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception e) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.err.println(e.getMessage());
+           
+        }
 	
 		// init frame properties
 		frame = new JFrame(TITLE);
@@ -222,7 +239,7 @@ public class Game extends Canvas implements Runnable {
 				render();
 
 			}
-			
+
 			// if one second has passed...
 			if (System.currentTimeMillis() - lastTimer > 1000) {
 				// increment last timer, output frames to user
@@ -282,6 +299,8 @@ public class Game extends Canvas implements Runnable {
 		if (map == 1) {
                     System.out.println("Stage 1");
 			g.drawImage(temp1Stage.getImage(), -900, -220, temp1Stage.getIconWidth() * 2, temp1Stage.getIconHeight() * 2,null);
+       
+
                        
                 }
 		if (map == 2) {
