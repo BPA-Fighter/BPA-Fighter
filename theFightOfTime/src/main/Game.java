@@ -279,7 +279,11 @@ public class Game extends Canvas implements Runnable {
 
         // decision making: if player chooses a map (as def'd in start() method), draw that map 
 
+<<<<<<< HEAD
+//            g.drawImage(mainStage);
+=======
            // g.drawImage(mainStage);
+>>>>>>> b317dad3654e83dec55b7e04badce0d1fd6ea06c
 
         // if current state exist, then render		
         if (State.getState() != null) {
