@@ -27,7 +27,7 @@ import main.states.State;
 
 public class Mafia extends Creature {
 
-	private int health;
+	public static int health;
 	private int velX, velY;
 	private Game game;
 
@@ -101,7 +101,13 @@ public class Mafia extends Creature {
 
 		rand = new Random();
 
-		health = 100;
+		if (Game.isNormal) {
+                    health = 100;
+                } else if (Game.isHard) {
+                    health = 300;
+                } else {
+                    health = 100; 
+                }
 		hurting = false;
 
 		// movement anims

@@ -25,7 +25,7 @@ public class IceGuy extends Creature {
     int choice = -1;
 
     // IceGuy: vars...
-    private int health;
+    public static int health;
     private int velX, velY;
     private Game game;
 
@@ -99,7 +99,14 @@ public class IceGuy extends Creature {
         rand = new Random();
 
         // health to 100
-        health = 100;
+        if (Game.isNormal) {
+            health = 100;
+        } else if (Game.isHard) {
+            health = 300;
+        } else {
+           health = 100; 
+        }
+        
 //        choice = main.GUI.getChoice();
 
         // movement

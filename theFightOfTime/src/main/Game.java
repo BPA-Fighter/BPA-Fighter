@@ -48,6 +48,8 @@ public class Game extends Canvas implements Runnable {
     public static final int HEIGHT = 224;
     public static final int SCALE = 2;
     int choice = -1;
+    public static boolean isNormal = false;
+    public static boolean isHard = false;
 
     // tick variables
     public boolean running = false;
@@ -83,7 +85,11 @@ public class Game extends Canvas implements Runnable {
         System.out.println("Choice: " + choice);
         
         if (choice == 0 || choice == 1) {
-        
+            if (choice == 0) {
+               isNormal = true;
+            } else if (choice == 1) {
+                isHard = true;
+            }
         
         int audioFileNumber = 1 + rNumber.nextInt(3);
      //   audioFileNumber = 2;

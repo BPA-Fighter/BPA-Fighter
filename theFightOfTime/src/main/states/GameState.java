@@ -40,6 +40,8 @@ public class GameState extends State {
     // init iceGuy, mafia
     private IceGuy iceGuy;
     private Mafia mafia;
+    public int iceGuyRoundWins = 0;
+    public int mafiaRoundWins = 0;
 
     // constructor
     public GameState(Game game) {
@@ -94,13 +96,34 @@ public class GameState extends State {
         g.setColor(Color.BLACK);
         // end game
         if (mafia.getHealth() <= 0) {
+            //increases the amount of round wins for IceGuy
+            iceGuyRoundWins += 1;
+            if (iceGuyRoundWins == 2) {
             // win screen
             String iceGuyWin = "ICEGUY WINS THE GAME!";
             g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
             g.setColor(Color.WHITE);
             int width = g.getFontMetrics().stringWidth(iceGuyWin);
             g.drawString(iceGuyWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            }
+            try {
+            Game game = new Game();
+            if (Game.isNormal) {
+                Mafia.health = 100;
+            } else if (Game.isHard) {
+                Mafia.health = 300;
+            } else {
+                Mafia.health = 100; 
+            }
+            System.out.println(Mafia.health);
+            game.start();
+            } catch (Exception e) {
+                
+            }
         } else if (iceGuy.getHealth() <= 0) {
+            //increases the amount of round wins for Mafia
+            mafiaRoundWins += 1;
+            if (mafiaRoundWins == 2) {
             // win screen
             String mafiaWin = "MAFIA WINS THE GAME!";
             g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
@@ -112,6 +135,20 @@ public class GameState extends State {
             menuBox.setAlignment(Pos.TOP_CENTER);
             menuBox.setTranslateX(Game.WIDTH / 3);
             menuBox.setTranslateY(Game.HEIGHT / 3);
+            }
+            try {
+            Game game = new Game();
+            if (Game.isNormal) {
+                IceGuy.health = 100;
+            } else if (Game.isHard) {
+                IceGuy.health = 300;
+            } else {
+                IceGuy.health = 100; 
+            }
+            game.start();
+            } catch (Exception e) {
+                
+            }
         }
 
     }
