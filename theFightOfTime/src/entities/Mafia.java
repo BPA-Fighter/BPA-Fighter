@@ -428,7 +428,7 @@ public class Mafia extends Creature {
 				lastTimer = System.currentTimeMillis();
 				handleAnims(HURTING);
 				health-=2;
-                                        String soundName = "punch1.wav";
+                                        String soundName = "/sound/fleshyPunch.wav";
                 try {
                     //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
                     AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));

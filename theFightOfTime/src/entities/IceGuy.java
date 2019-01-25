@@ -435,7 +435,7 @@ public class IceGuy extends Creature {
                 lastTimer = System.currentTimeMillis();
                 hurting = true;
                 health -= 2;
-                String soundName = "icePunch.wav";
+                String soundName = "/sound/icePunch.wav";
                 try {
                     //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
                     AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
