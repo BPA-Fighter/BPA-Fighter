@@ -510,11 +510,11 @@ public class IceGuy extends Creature {
         }
 
         // draw hitboxes
-        g.setColor(Color.WHITE);
-        g.drawRect(getHitBounds().x, getHitBounds().y, getHitBounds().width, getHitBounds().height);
-
-        g.setColor(Color.RED);
-        g.drawRect(getAttackBounds().x, getAttackBounds().y, getAttackBounds().width, getAttackBounds().height);
+//        g.setColor(Color.WHITE);
+//        g.drawRect(getHitBounds().x, getHitBounds().y, getHitBounds().width, getHitBounds().height);
+//
+//        g.setColor(Color.RED);
+//        g.drawRect(getAttackBounds().x, getAttackBounds().y, getAttackBounds().width, getAttackBounds().height);
 
     }
 
