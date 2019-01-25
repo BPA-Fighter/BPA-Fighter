@@ -110,12 +110,16 @@ public class GameState extends State {
             Game game = new Game();
             if (Game.isNormal) {
                 Mafia.health = 100;
+                IceGuy.health = 100;
             } else if (Game.isHard) {
                 Mafia.health = 300;
+                IceGuy.health = 300;
             } else {
-                Mafia.health = 100; 
+                Mafia.health = 100;
+                IceGuy.health = 100;
             }
-            System.out.println(Mafia.health);
+            iceGuy.render(g);
+            mafia.render(g);
             game.start();
             } catch (Exception e) {
                 
@@ -140,11 +144,15 @@ public class GameState extends State {
             Game game = new Game();
             if (Game.isNormal) {
                 IceGuy.health = 100;
+                Mafia.health = 100;
             } else if (Game.isHard) {
                 IceGuy.health = 300;
             } else {
-                IceGuy.health = 100; 
+                IceGuy.health = 100;
+                Mafia.health = 100;
             }
+            iceGuy.render(g);
+            mafia.render(g);
             game.start();
             } catch (Exception e) {
                 
