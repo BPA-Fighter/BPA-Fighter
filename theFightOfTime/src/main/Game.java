@@ -141,10 +141,6 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
-    /**
-     * @see ex_1.png in project dir for explanation of game updating
-     * @see ex_2.png [...] of game state managing
-     */
     public synchronized void start() throws IOException {
 
         
@@ -157,56 +153,6 @@ public class Game extends Canvas implements Runnable {
         // states
         gameState = new GameState(this);
         State.setState(gameState);
-
-        // print map selection
-        System.out.println("===========================");
-        System.out.println("WELCOME! MAP SELECTION...");
-        System.out.println("1. Forest\n2. Main\n3. IceGuy");
-        System.out.println("===========================");
-
-        //GUI.main(gArgs);
-        // instantiate scanner, and rNumberomizer and init vars
-        sc = new Scanner(System.in);
-        rNumber = new Random();
-        int choice = 0;
-
-        // ask user for input
-        System.out.println("\nWould you like to select your map or choose a rNumberom map?");
-
-        // while user doesn't make valid choice, keep asking for choice between map/rNumberom
-        do {
-            try {
-                System.out.println("Please enter 1 (to select) or 2 (for rNumberom).");
-                choice = sc.nextInt();
-            } catch (Exception e) {
-                System.err.println("That is not an integer, warrior.");
-                sc = new Scanner(System.in);
-            }
-        } while (choice < 1 || choice > 2);
-
-        // if choice is 1, then choose map
-        if (choice == 1) {
-            System.out.println("What map would you like?");
-            do {
-                try {
-                    // output to user
-                    System.out.println("Please enter an integer from 1-3.");
-                    // store var in map
-                    map = sc.nextInt();
-
-                } catch (Exception e) {
-                    System.err.println("That is not an integer, warrior.");
-                    sc = new Scanner(System.in);
-                }
-
-                System.out.println(map);
-
-            } while (map < 1 || map > 3);
-            // if choice is 2, then rNumberomly select a map
-        } else if (choice == 2) {
-            map = rNumber.nextInt(3) + 1;
-        }
-
         // thread this class
         new Thread(this).start();
     }
@@ -314,24 +260,11 @@ public class Game extends Canvas implements Runnable {
 
         /* ALL DRAWING HERE */
         // init maps
-        ImageIcon temp1Stage = new ImageIcon("/images/temp1.png");
-        ImageIcon temp2Stage = new ImageIcon("/images/temp2.png");
-        ImageIcon temp3Stage = new ImageIcon("theFightOfTime/images/temp3.png");
+        ImageIcon mainStage = new ImageIcon("/images/iceGuy_stage.png");
 
         // decision making: if player chooses a map (as def'd in start() method), draw that map 
-        if (map == 1) {
-            System.out.println("Stage 1");
-            g.drawImage(temp1Stage.getImage(), -900, -220, temp1Stage.getIconWidth() * 2, temp1Stage.getIconHeight() * 2, null);
 
-        }
-        if (map == 2) {
-            System.out.println("Stage 2");
-            g.drawImage(temp2Stage.getImage(), -67, -67, null);
-        }
-        if (map == 3) {
-            System.out.println("Stage 3");
-            g.drawImage(temp3Stage.getImage(), -212, 30, temp3Stage.getIconWidth() * Game.SCALE, temp3Stage.getIconHeight() * Game.SCALE, null);
-        }
+            g.drawImage(mainStage);
 
         // if current state exist, then render		
         if (State.getState() != null) {
