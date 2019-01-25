@@ -86,6 +86,7 @@ public class Game extends Canvas implements Runnable {
         
         
         int audioFileNumber = 1 + rNumber.nextInt(2);
+        audioFileNumber = 3;
         System.out.println(audioFileNumber);
         if (audioFileNumber == 1) {
             String soundName = "OneLastDrink.wav";
@@ -116,7 +117,21 @@ public class Game extends Canvas implements Runnable {
 
             }
         }
+         else if (audioFileNumber == 3) {
+            String soundName = "FinalFight.wav";
+            try {
 
+                //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } catch (Exception e) {
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                System.err.println(e.getMessage());
+
+            }
+        }
         // init frame properties
         frame = new JFrame(TITLE);
         frame.setSize(WIDTH * SCALE, HEIGHT * SCALE);
