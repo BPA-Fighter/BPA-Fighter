@@ -32,7 +32,7 @@ import javafx.stage.Stage;
 
 public class GUI extends Application {
     
-    int choice = -1;
+    static int choice = -1;
     
     
     private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
@@ -181,6 +181,7 @@ public class GUI extends Application {
                 if (currentItem == 0) {
                     System.out.println("NORMAL");
                     choice = 0;
+                    primaryStage.close();
                 } else if (currentItem == 1) {
                     System.out.println("HARD");
                     choice = 1;
@@ -199,7 +200,7 @@ public class GUI extends Application {
         primaryStage.show();
     }
     
-    public int getChoice() {
+    public static int getChoice() {
         return choice;
     }
 

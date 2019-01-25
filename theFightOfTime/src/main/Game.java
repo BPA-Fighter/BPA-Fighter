@@ -11,7 +11,6 @@ package main;
  * @author Time Crunchers
  *
  */
-
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -76,38 +75,46 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
 
-        rNumber = new Random(); 
+        
+        rNumber = new Random();
+
+                GUI.main(gArgs);
+        choice = GUI.getChoice();
+        System.out.println("Choice: " + choice);
+        
+        if (choice == 0 || choice == 1) {
+        
         
         int audioFileNumber = 1 + rNumber.nextInt(2);
         System.out.println(audioFileNumber);
         if (audioFileNumber == 1) {
-        String soundName = "OneLastDrink.wav";
-        try {
+            String soundName = "OneLastDrink.wav";
+            try {
 
-            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-        } catch (Exception e) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.err.println(e.getMessage());
+                //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } catch (Exception e) {
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                System.err.println(e.getMessage());
 
-        }
+            }
         } else if (audioFileNumber == 2) {
             String soundName = "snowMusic.wav";
-        try {
+            try {
 
-            //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.start();
-        } catch (Exception e) {
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-            System.err.println(e.getMessage());
+                //  AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(soundName).getAbsoluteFile());
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(soundName));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } catch (Exception e) {
+                System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                System.err.println(e.getMessage());
 
-        }
+            }
         }
 
         // init frame properties
@@ -131,6 +138,7 @@ public class Game extends Canvas implements Runnable {
 
         // pack everything
         frame.pack();
+        }
     }
 
     /**
@@ -139,9 +147,7 @@ public class Game extends Canvas implements Runnable {
      */
     public synchronized void start() throws IOException {
 
-       // GUI.main(gArgs);
-//            choice = GUI.getChoice();
-
+        
         // the program is running...
         running = true;
 
