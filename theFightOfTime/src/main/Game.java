@@ -85,7 +85,7 @@ public class Game extends Canvas implements Runnable {
         if (choice == 0 || choice == 1) {
         
         
-        int audioFileNumber = 1 + rNumber.nextInt(2);
+        int audioFileNumber = 1 + rNumber.nextInt(3);
      //   audioFileNumber = 2;
         System.out.println(audioFileNumber);
          String soundName;
