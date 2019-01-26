@@ -294,7 +294,18 @@ public class Game extends Canvas implements Runnable {
         System.out.println("Time " + time);
     }
 
-    
+    public void pause(){
+        int tempHolder = 0;
+        if(getKeyManager().P){
+            tempHolder = time; 
+        } 
+        
+        if(!getKeyManager().P){
+          time = tempHolder;   
+            
+        }
+        
+    }
     
     public static String[] getArgs() {
         return gArgs;
