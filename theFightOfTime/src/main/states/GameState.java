@@ -69,25 +69,6 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics g) {
-        // get images for ui
-        ImageIcon healthBar = new ImageIcon("healthBar.png");
-        ImageIcon iceGuyFont = new ImageIcon("iceGuyFont.png");
-        ImageIcon mafiaFont = new ImageIcon("mafiaFont.png");
-
-        // print ui for iceGuy
-        g.setColor(Color.yellow);
-        double percentIceGuy = iceGuy.getHealth() / 100.0;
-        g.fillRect(61, 19, (int) (173 * percentIceGuy), 11);
-        g.drawImage(iceGuyFont.getImage(), mafiaFont.getIconWidth() - 35, 40, 48, 16, null);
-
-        // print ui for mafia
-        g.setColor(Color.yellow);
-        double percentMafia = mafia.getHealth() / 100.0;
-        g.fillRect(99 + 29 + 144, 19, (int) (173 * percentMafia), 11);
-        g.drawImage(mafiaFont.getImage(), (Game.WIDTH * Game.SCALE) - 2 * mafiaFont.getIconWidth() + mafiaFont.getIconWidth() / 2 + 32, 40, 48, 16, null);
-
-        // drawn last so that rect and ui could be under
-        g.drawImage(healthBar.getImage(), 60, 16, (int) (healthBar.getIconWidth() * 1.2), (int) (healthBar.getIconHeight() * 1.2), null);
 
         // render instances
         iceGuy.render(g);
@@ -129,16 +110,7 @@ public class GameState extends State {
             mafiaRoundWins += 1;
             if (mafiaRoundWins == 2) {
             // win screen
-            String mafiaWin = "MAFIA WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
-            g.setColor(Color.WHITE);
-            int width = g.getFontMetrics().stringWidth(mafiaWin);
-            g.drawString(mafiaWin, Game.WIDTH - width / 2, Game.HEIGHT);
-            menuBox = new VBox(10,
-                    new MenuItem("Main Menu"));
-            menuBox.setAlignment(Pos.TOP_CENTER);
-            menuBox.setTranslateX(Game.WIDTH / 3);
-            menuBox.setTranslateY(Game.HEIGHT / 3);
+            
             //game.setTime(90);
             }
             try {
