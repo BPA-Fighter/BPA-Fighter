@@ -37,8 +37,8 @@ import managers.KeyManager;
 @SuppressWarnings({"unused", "serial"})
 public class Game extends Canvas implements Runnable {
 
-    public static Timer counter = new Timer();
-    public static int time = 5500;
+    public Timer counter = new Timer();
+    public int time = 5500;
 
     static String[] gArgs;
 
@@ -198,7 +198,7 @@ public class Game extends Canvas implements Runnable {
                 ticks++;
                 tick();
                 delta--;
-                //time();
+                time();
                 canRender = true;
             }
 
@@ -244,7 +244,7 @@ public class Game extends Canvas implements Runnable {
             State.getState().tick();
 
         }
-check(time);
+
     }
 
     public void render() {
@@ -284,16 +284,17 @@ check(time);
 
     public void time() {
          
+        time--;
+       counter.schedule(new TimerTask() {
+  @Override
+  public void run() {
+    
+  }
+}, 2*60*1000);
+        System.out.println("Time " + time);
     }
 
-    public static void check(int time) {
-        System.out.println("We made it hereeeeeeeeeeeeeeeeeeee");
-        if (time == 0) {
-            System.out.println("And here as wellllllllllllllllllll");
-            counter.cancel();
-           time = 0; 
-        }
-    }
+    
     
     public static String[] getArgs() {
         return gArgs;
@@ -303,15 +304,6 @@ check(time);
         Game game = new Game();
         gArgs = args;
         game.start();
-        check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
-        
-       counter.schedule(new TimerTask() {
-  @Override
-  public void run() {
-    time--;
-  }
-}, 2*60*1000);
-        System.out.println("Time " + time);
     }
 
     // GETTERS AND SETTERS

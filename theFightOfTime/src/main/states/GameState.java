@@ -34,10 +34,8 @@ import main.WinScreen;
 
 public class GameState extends State {
 
-    private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
-
-    private VBox menuBox;
-
+    String winner = "";
+    
     // init iceGuy, mafia
     private IceGuy iceGuy;
     private Mafia mafia;
@@ -72,7 +70,8 @@ public class GameState extends State {
     public void render(Graphics g) {
 
         // render instances
-//        iceGuy.render(g););
+        iceGuy.render(g);
+        mafia.render(g);
 
 //        mafia.render(g
 //        g.setColor(Color.BLACK);
@@ -80,9 +79,13 @@ public class GameState extends State {
         if (mafia.getHealth() <= 0) {
             //increases the amount of round wins for IceGuy
             iceGuyRoundWins += 1;
+            if(game.getTime() <=0 && (mafia.getHealth() > iceGuy.getHealth())){
+                iceGuyRoundWins ++; 
+            }
             if (iceGuyRoundWins == 2) {
             // win screen
-            WinScreen.main();
+            winner = "iceGuy";
+            WinScreen.main(winner);
             //game.setTime(90);
             }
             try {
@@ -106,9 +109,14 @@ public class GameState extends State {
         } else if (iceGuy.getHealth() <= 0) {
             //increases the amount of round wins for Mafia
             mafiaRoundWins += 1;
+<<<<<<< HEAD
+            if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
+                mafiaRoundWins ++; 
+=======
             if (mafiaRoundWins == 2) {
             // win screen
-            WinScreen.main();
+            winner = "mafia";
+            WinScreen.main(winner);
             //game.setTime(90);
             }
             try {
@@ -137,7 +145,8 @@ public class GameState extends State {
             iceGuyRoundWins += 1;
             if (iceGuyRoundWins == 2) {
             // win screen
-            WinScreen.main();
+            winner = "iceGuy";
+            WinScreen.main(winner);
             //game.setTime(90);
             }
             try {
@@ -151,19 +160,12 @@ public class GameState extends State {
             } else {
                 Mafia.health = 100;
                 IceGuy.health = 100;
+>>>>>>> 9d1b8048bb2cce4636c790ac0ce0f8e6089e670b
             }
-            iceGuy.render(g);
-            mafia.render(g);
-            game.start();
-            } catch (Exception e) {
-                
-            }
-        } else if (iceGuy.getHealth() < mafia.getHealth()) {
-            //increases the amount of round wins for Mafia
-            mafiaRoundWins += 1;
             if (mafiaRoundWins == 2) {
             // win screen
-            WinScreen.main();
+            winner = "mafia";
+            WinScreen.main(winner);
             //game.setTime(90);
             }
             try {
@@ -185,7 +187,6 @@ public class GameState extends State {
             }
         }
         
-        }
     }
 
     @Override
@@ -247,4 +248,8 @@ public class GameState extends State {
         return mafia.getMafiaX();
     }
 
+    public String getWinner() {
+        return winner;
+    }
+    
 }
