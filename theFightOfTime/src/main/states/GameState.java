@@ -98,7 +98,7 @@ public class GameState extends State {
             } else if(game.getTime() <=0 && (mafia.getHealth() > iceGuy.getHealth())){
                 iceGuyRoundWins ++; 
             }
-            if (iceGuyRoundWins <= 2) {
+            if (iceGuyRoundWins == 2) {
             // win screen
             winner = "iceGuy";
             WinScreen.main(winner);
@@ -135,7 +135,7 @@ public class GameState extends State {
             } else if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
                 mafiaRoundWins ++; 
             }
-            if (mafiaRoundWins <= 2) {
+            if (mafiaRoundWins == 2) {
             // win screen
             winner = "mafia";
             WinScreen.main(winner);
