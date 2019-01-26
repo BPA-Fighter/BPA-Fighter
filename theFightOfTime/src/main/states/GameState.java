@@ -30,6 +30,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import main.GUI;
 import main.Game;
+import main.WinScreen;
 
 public class GameState extends State {
 
@@ -71,20 +72,17 @@ public class GameState extends State {
     public void render(Graphics g) {
 
         // render instances
-        iceGuy.render(g);
-        mafia.render(g);
+//        iceGuy.render(g););
 
-        g.setColor(Color.BLACK);
+//        mafia.render(g
+//        g.setColor(Color.BLACK);
         // end game
         if (mafia.getHealth() <= 0) {
             //increases the amount of round wins for IceGuy
             iceGuyRoundWins += 1;
             if (iceGuyRoundWins == 2) {
             // win screen
-            String iceGuyWin = "ICEGUY WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);            g.setColor(Color.WHITE);
-            int width = g.getFontMetrics().stringWidth(iceGuyWin);
-            g.drawString(iceGuyWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            WinScreen.main();
             //game.setTime(90);
             }
             try {
@@ -110,16 +108,7 @@ public class GameState extends State {
             mafiaRoundWins += 1;
             if (mafiaRoundWins == 2) {
             // win screen
-            String mafiaWin = "MAFIA WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
-            g.setColor(Color.WHITE);
-            int width = g.getFontMetrics().stringWidth(mafiaWin);
-            g.drawString(mafiaWin, Game.WIDTH - width / 2, Game.HEIGHT);
-            menuBox = new VBox(10,
-                    new MenuItem("Main Menu"));
-            menuBox.setAlignment(Pos.TOP_CENTER);
-            menuBox.setTranslateX(Game.WIDTH / 3);
-            menuBox.setTranslateY(Game.HEIGHT / 3);
+            WinScreen.main();
             //game.setTime(90);
             }
             try {
@@ -178,16 +167,7 @@ public class GameState extends State {
             mafiaRoundWins += 1;
             if (mafiaRoundWins == 2) {
             // win screen
-            String mafiaWin = "MAFIA WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
-            g.setColor(Color.WHITE);
-            int width = g.getFontMetrics().stringWidth(mafiaWin);
-            g.drawString(mafiaWin, Game.WIDTH - width / 2, Game.HEIGHT);
-            menuBox = new VBox(10,
-                    new MenuItem("Main Menu"));
-            menuBox.setAlignment(Pos.TOP_CENTER);
-            menuBox.setTranslateX(Game.WIDTH / 3);
-            menuBox.setTranslateY(Game.HEIGHT / 3);
+            WinScreen.main();
             //game.setTime(90);
             }
             try {
@@ -244,67 +224,6 @@ public class GameState extends State {
         }
 // Make sure to use the above catch statements!
 
-    }
-
-    private MenuItem getMenuItem(int index) {
-        return (MenuItem) menuBox.getChildren().get(index);
-    }
-
-    private static class MenuItem extends HBox {
-
-        private TriCircle c1 = new TriCircle(), c2 = new TriCircle();
-        private Text text;
-        private Runnable script;
-
-        public MenuItem(String name) {
-            super(15);
-            setAlignment(Pos.CENTER);
-
-            text = new Text(name);
-            text.setFont(FONT);
-            text.setEffect(new GaussianBlur(2));
-
-            getChildren().addAll(c1, text, c2);
-            setActive(false);
-            setOnActivate(() -> System.out.println(name + " activated"));
-        }
-
-        public void setActive(boolean b) {
-            c1.setVisible(b);
-            c2.setVisible(b);
-            text.setFill(b ? javafx.scene.paint.Color.WHITE : javafx.scene.paint.Color.GREY);
-        }
-
-        public void setOnActivate(Runnable r) {
-            script = r;
-        }
-
-        public void activate() {
-            if (script != null) {
-                script.run();
-            }
-        }
-    }
-
-    private static class TriCircle extends Parent {
-
-        public TriCircle() {
-            Shape shape1 = Shape.subtract(new Circle(5), new Circle(2));
-            shape1.setFill(javafx.scene.paint.Color.RED);
-
-            Shape shape2 = Shape.subtract(new Circle(5), new Circle(2));
-            shape2.setFill(javafx.scene.paint.Color.BLUE);
-            shape2.setTranslateX(5);
-
-            Shape shape3 = Shape.subtract(new Circle(5), new Circle(2));
-            shape3.setFill(javafx.scene.paint.Color.GREEN);
-            shape3.setTranslateX(2.5);
-            shape3.setTranslateY(-5);
-
-            getChildren().addAll(shape1, shape2, shape3);
-
-            setEffect(new GaussianBlur(2));
-        }
     }
 
     // GETTERS AND SETTERS:

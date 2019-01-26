@@ -188,8 +188,8 @@ public class WinScreen extends Application {
         });
         primaryStage.show();
     }
-    public static void main(String[] args) {
-        gArgs = args;
-        launch(args);
+    public static void main() {
+        gArgs = Game.getArgs();
+        launch(gArgs);
     }
 }
