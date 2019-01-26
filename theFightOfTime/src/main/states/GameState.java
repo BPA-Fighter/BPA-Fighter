@@ -150,6 +150,7 @@ public class GameState extends State {
                 
             }
         }
+        }
         
         // when the clock hits 0
         if(game.getTime() <= 0){
@@ -201,6 +202,8 @@ public class GameState extends State {
                 
             }
         
+    }
+        }
     }
 
 
