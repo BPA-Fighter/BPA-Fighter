@@ -74,6 +74,7 @@ public class Game extends Canvas implements Runnable {
 
     // int map
     private int map = 0;
+    
 
     public Game() {
 
@@ -295,15 +296,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void pause(){
-        int tempHolder = 0;
-        if(getKeyManager().P){
-            tempHolder = time; 
-        } 
-        
-        if(!getKeyManager().P){
-          time = tempHolder;   
-            
-        }
+        running = !running; 
         
     }
     
