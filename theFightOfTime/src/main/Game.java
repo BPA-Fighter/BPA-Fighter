@@ -38,7 +38,7 @@ import managers.KeyManager;
 public class Game extends Canvas implements Runnable {
 
     public Timer counter;
-    public int time = 90;
+    public int time = 1500;
 
     static String[] gArgs;
 
@@ -197,7 +197,8 @@ public class Game extends Canvas implements Runnable {
 			    update the game...*/
                 ticks++;
                 tick();
-                delta--;
+                delta--; 
+                time(); 
                 canRender = true;
             }
 
@@ -282,19 +283,19 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void time() {
+        time--;
         counter = new javax.swing.Timer(30, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                time--;
 
                 try {
                     Thread.sleep(1000);
                 } catch (Exception ex) {
 
                 }
-                check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
             }
         });
+         check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
         System.out.println("Time " + time);
     }
 
@@ -328,4 +329,13 @@ public class Game extends Canvas implements Runnable {
     public int tickCounter() {
         return tickCount;
     }
+    
+    public int getTime(){
+        return time;    
+    }
+    
+    public void setTime(int newTime){
+        time = newTime; 
+    }
+    
 }

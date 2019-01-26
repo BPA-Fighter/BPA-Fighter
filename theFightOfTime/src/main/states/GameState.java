@@ -101,10 +101,10 @@ public class GameState extends State {
             if (iceGuyRoundWins == 2) {
             // win screen
             String iceGuyWin = "ICEGUY WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
-            g.setColor(Color.WHITE);
+            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);            g.setColor(Color.WHITE);
             int width = g.getFontMetrics().stringWidth(iceGuyWin);
             g.drawString(iceGuyWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            //game.setTime(90);
             }
             try {
             Game game = new Game();
@@ -139,6 +139,7 @@ public class GameState extends State {
             menuBox.setAlignment(Pos.TOP_CENTER);
             menuBox.setTranslateX(Game.WIDTH / 3);
             menuBox.setTranslateY(Game.HEIGHT / 3);
+            //game.setTime(90);
             }
             try {
             Game game = new Game();
@@ -158,7 +159,76 @@ public class GameState extends State {
                 
             }
         }
-
+        
+        // when the clock hits 0
+        if(game.getTime() <= 0){
+        if (mafia.getHealth() < iceGuy.getHealth()) {
+            //increases the amount of round wins for IceGuy
+            iceGuyRoundWins += 1;
+            if (iceGuyRoundWins == 2) {
+            // win screen
+            String iceGuyWin = "ICEGUY WINS THE GAME!";
+            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
+            g.setColor(Color.WHITE);
+            int width = g.getFontMetrics().stringWidth(iceGuyWin);
+            g.drawString(iceGuyWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            //game.setTime(90);
+            }
+            try {
+            Game game = new Game();
+            if (Game.isNormal) {
+                Mafia.health = 100;
+                IceGuy.health = 100;
+            } else if (Game.isHard) {
+                Mafia.health = 300;
+                IceGuy.health = 300;
+            } else {
+                Mafia.health = 100;
+                IceGuy.health = 100;
+            }
+            iceGuy.render(g);
+            mafia.render(g);
+            game.start();
+            } catch (Exception e) {
+                
+            }
+        } else if (iceGuy.getHealth() < mafia.getHealth()) {
+            //increases the amount of round wins for Mafia
+            mafiaRoundWins += 1;
+            if (mafiaRoundWins == 2) {
+            // win screen
+            String mafiaWin = "MAFIA WINS THE GAME!";
+            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
+            g.setColor(Color.WHITE);
+            int width = g.getFontMetrics().stringWidth(mafiaWin);
+            g.drawString(mafiaWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            menuBox = new VBox(10,
+                    new MenuItem("Main Menu"));
+            menuBox.setAlignment(Pos.TOP_CENTER);
+            menuBox.setTranslateX(Game.WIDTH / 3);
+            menuBox.setTranslateY(Game.HEIGHT / 3);
+            //game.setTime(90);
+            }
+            try {
+            Game game = new Game();
+            if (Game.isNormal) {
+                IceGuy.health = 100;
+                Mafia.health = 100;
+            } else if (Game.isHard) {
+                IceGuy.health = 300;
+            } else {
+                IceGuy.health = 100;
+                Mafia.health = 100;
+            }
+            iceGuy.render(g);
+            mafia.render(g);
+            game.start();
+            } catch (Exception e) {
+                
+            }
+        }
+        
+        }
     }
 
     @Override
@@ -166,7 +236,7 @@ public class GameState extends State {
         // empty for now because Java 8 API issues on school computers
     }
 
-    public void fileWrite() {
+    public  void fileWrite() {
         String fileName = "outputFile.txt"; // File you want to write to (will overwrite file)
         try {
             // During testing inside NetBeans, the output txt file will save in the build Folder inside the
@@ -181,7 +251,8 @@ public class GameState extends State {
             bufferedWriter.write("Ice guy;s health: " + iceGuy.getHealth());
             bufferedWriter.write("Mafia guys health: " + mafia.getHealth());
             bufferedWriter.write("Current tick: " + game.tickCounter());
-            bufferedWriter.write("Round time: "); // for when we have or timer or when I find it. 
+            bufferedWriter.write("Round time: " + game.getTime()); // for when we have or timer or when I find it.
+            //bufferedWriter.write("Total time: " + game.totalTimeRan());
             bufferedWriter.write("Ice guy's wins: "); // for when we have the win counter or for when I find it. 
 
             fileWriter.close();
