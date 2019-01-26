@@ -69,6 +69,21 @@ public class GameState extends State {
     @Override
     public void render(Graphics g) {
 
+           
+
+        // print ui for iceGuy
+        g.setColor(Color.yellow);
+        double percentIceGuy = iceGuy.getHealth() / 100.0;
+        g.fillRect(61, 19, (int) (173 * percentIceGuy), 11);
+        // print ui for mafia
+        g.setColor(Color.yellow);
+        double percentMafia = mafia.getHealth() / 100.0;
+        g.fillRect(99 + 29 + 144, 19, (int) (173 * percentMafia), 11);
+        
+        
+        
+
+        
         // render instances
         iceGuy.render(g);
         mafia.render(g);
