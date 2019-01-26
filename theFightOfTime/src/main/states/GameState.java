@@ -93,11 +93,12 @@ public class GameState extends State {
         // end game
         if (mafia.getHealth() <= 0) {
             //increases the amount of round wins for IceGuy
+            if (mafia.getHealth() <= 0) {
             iceGuyRoundWins += 1;
-            if(game.getTime() <=0 && (mafia.getHealth() > iceGuy.getHealth())){
+            } else if(game.getTime() <=0 && (mafia.getHealth() > iceGuy.getHealth())){
                 iceGuyRoundWins ++; 
             }
-            if (iceGuyRoundWins == 2) {
+            if (iceGuyRoundWins <= 2) {
             // win screen
             winner = "iceGuy";
             WinScreen.main(winner);
@@ -115,18 +116,26 @@ public class GameState extends State {
                 Mafia.health = 100;
                 IceGuy.health = 100;
             }
-            iceGuy.render(g);
-            mafia.render(g);
+            // print ui for iceGuy
+            g.setColor(Color.yellow);
+            percentIceGuy = iceGuy.getHealth() / 100.0;
+            g.fillRect(61, 19, (int) (173 * percentIceGuy), 11);
+            // print ui for mafia
+            g.setColor(Color.yellow);
+            percentMafia = mafia.getHealth() / 100.0;
+            g.fillRect(99 + 29 + 144, 19, (int) (173 * percentMafia), 11);
             game.start();
             } catch (Exception e) {
                 
             }
         } else if (iceGuy.getHealth() <= 0) {
             //increases the amount of round wins for Mafia
+            if (iceGuy.getHealth() <= 0) {
             mafiaRoundWins += 1;
-            if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
+            } else if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
                 mafiaRoundWins ++; 
-            if (mafiaRoundWins == 2) {
+            }
+            if (mafiaRoundWins <= 2) {
             // win screen
             winner = "mafia";
             WinScreen.main(winner);
@@ -143,67 +152,20 @@ public class GameState extends State {
                 IceGuy.health = 100;
                 Mafia.health = 100;
             }
-            iceGuy.render(g);
-            mafia.render(g);
+            // print ui for iceGuy
+            g.setColor(Color.yellow);
+            percentIceGuy = iceGuy.getHealth() / 100.0;
+            g.fillRect(61, 19, (int) (173 * percentIceGuy), 11);
+            // print ui for mafia
+            g.setColor(Color.yellow);
+            percentMafia = mafia.getHealth() / 100.0;
+            g.fillRect(99 + 29 + 144, 19, (int) (173 * percentMafia), 11);
             game.start();
             } catch (Exception e) {
                 
             }
-        }
-        }
         
-        // when the clock hits 0
-        if(game.getTime() <= 0){
-        if (mafia.getHealth() < iceGuy.getHealth()) {
-            //increases the amount of round wins for IceGuy
-            iceGuyRoundWins += 1;
-            if (iceGuyRoundWins == 2) {
-            // win screen
-            winner = "iceGuy";
-            WinScreen.main(winner);
-            //game.setTime(90);
-            }
-            try {
-            Game game = new Game();
-            if (Game.isNormal) {
-                Mafia.health = 100;
-                IceGuy.health = 100;
-            } else if (Game.isHard) {
-                Mafia.health = 300;
-                IceGuy.health = 300;
-            } else {
-                Mafia.health = 100;
-                IceGuy.health = 100;
-            }
-            if (mafiaRoundWins == 2) {
-            // win screen
-            winner = "mafia";
-            WinScreen.main(winner);
-            //game.setTime(90);
-            }
-            try {
-            game = new Game();
-            if (Game.isNormal) {
-                IceGuy.health = 100;
-                Mafia.health = 100;
-            } else if (Game.isHard) {
-                IceGuy.health = 300;
-            } else {
-                IceGuy.health = 100;
-                Mafia.health = 100;
-            }
-            iceGuy.render(g);
-            mafia.render(g);
-            game.start();
-            } catch (Exception e) {
-                
-            }
-        } catch (Exception e) {
-                
-            }
-        
-    }
-        }
+        }    
     }
 
 

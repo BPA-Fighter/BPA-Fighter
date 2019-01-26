@@ -74,6 +74,7 @@ public class Game extends Canvas implements Runnable {
 
     // int map
     private int map = 0;
+    
 
     public Game() {
 
@@ -294,7 +295,10 @@ public class Game extends Canvas implements Runnable {
         System.out.println("Time " + time);
     }
 
-    
+    public void pause(){
+        running = !running; 
+        
+    }
     
     public static String[] getArgs() {
         return gArgs;

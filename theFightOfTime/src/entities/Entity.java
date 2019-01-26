@@ -10,7 +10,7 @@ import java.awt.Graphics;
 
 /**
  *
- * @author Joshua Burton
+ * 
  */
 public abstract class Entity {
 
