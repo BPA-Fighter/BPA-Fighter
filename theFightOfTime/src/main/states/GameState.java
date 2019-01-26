@@ -137,11 +137,7 @@ public class GameState extends State {
             iceGuyRoundWins += 1;
             if (iceGuyRoundWins == 2) {
             // win screen
-            String iceGuyWin = "ICEGUY WINS THE GAME!";
-            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
-            g.setColor(Color.WHITE);
-            int width = g.getFontMetrics().stringWidth(iceGuyWin);
-            g.drawString(iceGuyWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            WinScreen.main();
             //game.setTime(90);
             }
             try {
