@@ -18,5 +18,5 @@
  - → - strafe right 
  - 1 - heavy punch (can also be used in air and crouch)
  - 2 - light punch (can also be used in air)
- - 3 - heavy kick (can also be used in air)
- - 4 - light kick 
+ - 4 - heavy kick (can also be used in air)
+ - 5 - light kick 

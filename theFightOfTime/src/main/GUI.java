@@ -185,9 +185,11 @@ public class GUI extends Application {
                 } else if (currentItem == 1) {
                     System.out.println("HARD");
                     choice = 1;
+                    primaryStage.close();
                 } else if (currentItem == 2) {
                     System.out.println("INSTRUCTIONS");
                     choice = 2;
+                    primaryStage.close();
                 }
                 getMenuItem(currentItem).activate();
             }
