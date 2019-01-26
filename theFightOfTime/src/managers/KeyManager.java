@@ -16,6 +16,7 @@ public class KeyManager implements KeyListener {
 	
 	public boolean G, H, B, N;
 	public boolean N1, N2, N4, N5;
+        public boolean P; 
 
 	
 	public KeyManager() {
@@ -47,6 +48,9 @@ public class KeyManager implements KeyListener {
 		N5 = keys[KeyEvent.VK_NUMPAD5];
 		N1 = keys[KeyEvent.VK_NUMPAD1];
 		N2 = keys[KeyEvent.VK_NUMPAD2];
+                
+                //pause
+                P = keys[KeyEvent.VK_P]; 
 	}
 	
 	@Override
