@@ -80,7 +80,7 @@ public class GameState extends State {
         double percentMafia = mafia.getHealth() / 100.0;
         g.fillRect(99 + 29 + 144, 19, (int) (173 * percentMafia), 11);
         
-        
+        //Magic
         
 
         
@@ -124,10 +124,8 @@ public class GameState extends State {
         } else if (iceGuy.getHealth() <= 0) {
             //increases the amount of round wins for Mafia
             mafiaRoundWins += 1;
-<<<<<<< HEAD
             if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
                 mafiaRoundWins ++; 
-=======
             if (mafiaRoundWins == 2) {
             // win screen
             winner = "mafia";
@@ -175,7 +173,6 @@ public class GameState extends State {
             } else {
                 Mafia.health = 100;
                 IceGuy.health = 100;
->>>>>>> 9d1b8048bb2cce4636c790ac0ce0f8e6089e670b
             }
             if (mafiaRoundWins == 2) {
             // win screen
@@ -184,7 +181,7 @@ public class GameState extends State {
             //game.setTime(90);
             }
             try {
-            Game game = new Game();
+            game = new Game();
             if (Game.isNormal) {
                 IceGuy.health = 100;
                 Mafia.health = 100;
@@ -200,14 +197,12 @@ public class GameState extends State {
             } catch (Exception e) {
                 
             }
-        }
+        } catch (Exception e) {
+                
+            }
         
     }
 
-    @Override
-    public void music() {
-        // empty for now because Java 8 API issues on school computers
-    }
 
     public  void fileWrite() {
         String fileName = "outputFile.txt"; // File you want to write to (will overwrite file)
@@ -265,6 +260,11 @@ public class GameState extends State {
 
     public String getWinner() {
         return winner;
+    }
+
+    @Override
+    public void music() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
