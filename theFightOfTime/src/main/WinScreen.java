@@ -7,7 +7,7 @@ package main;
 
 /**
  *
- * @author grant
+ * 
  */
 public class WinScreen {
     
