@@ -53,6 +53,7 @@ public class Game extends Canvas implements Runnable {
 
     // tick variables
     public boolean running = false;
+    public boolean paused = false; 
     public int tickCount = 0;
 
     // graphics
@@ -181,7 +182,7 @@ public class Game extends Canvas implements Runnable {
 
         // while the program is running....
         while (running) {
-
+            
             // get the current system time
             long now = System.nanoTime();
             // find delta by taking difference between now and last
@@ -196,11 +197,34 @@ public class Game extends Canvas implements Runnable {
                 /* if the current time - last / n, where n
 				   can be any real number is greater than 1
 			    update the game...*/
+               
                 ticks++;
                 tick();
                 delta--;
                 time();
+                pause(); 
                 canRender = true;
+                while(paused){
+            getKeyManager().up = false;
+            getKeyManager().down = false;
+            getKeyManager().left = false;
+            getKeyManager().right = false;
+            getKeyManager().up1 = false;
+            getKeyManager().down1 = false;
+            getKeyManager().left1 = false;
+            getKeyManager().right1 = false;
+            getKeyManager().G = false;
+            getKeyManager().H = false;
+            getKeyManager().B = false;
+            getKeyManager().N = false;
+            getKeyManager().N4 = false;
+            getKeyManager().N4 = false;
+            getKeyManager().N1 = false;
+            getKeyManager().N2 = false;
+            if(getKeyManager().P && paused){
+                paused = false; 
+            }
+        }
             }
 
             // sleep program so that not to many frames are produced (reduce lag)
@@ -236,6 +260,7 @@ public class Game extends Canvas implements Runnable {
 
         // update keyboard input
         keyManager.tick();
+
 
         // if current state exist, then update the game
         if (State.getState() != null) {
@@ -296,8 +321,9 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void pause(){
-        running = !running; 
-        
+        if(getKeyManager().P){
+        paused = !paused; 
+        }
     }
     
     public static String[] getArgs() {
