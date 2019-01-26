@@ -110,7 +110,16 @@ public class GameState extends State {
             mafiaRoundWins += 1;
             if (mafiaRoundWins == 2) {
             // win screen
-            
+            String mafiaWin = "MAFIA WINS THE GAME!";
+            g.fillRect(0, 0, Game.WIDTH * 2, Game.HEIGHT * 2);
+            g.setColor(Color.WHITE);
+            int width = g.getFontMetrics().stringWidth(mafiaWin);
+            g.drawString(mafiaWin, Game.WIDTH - width / 2, Game.HEIGHT);
+            menuBox = new VBox(10,
+                    new MenuItem("Main Menu"));
+            menuBox.setAlignment(Pos.TOP_CENTER);
+            menuBox.setTranslateX(Game.WIDTH / 3);
+            menuBox.setTranslateY(Game.HEIGHT / 3);
             //game.setTime(90);
             }
             try {

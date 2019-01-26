@@ -304,6 +304,10 @@ public class Game extends Canvas implements Runnable {
             counter.stop(); // this is what stops the timer. Oh and by the way i hope the button is big enough for you xD
         }
     }
+    
+    public static String[] getArgs() {
+        return gArgs;
+    }
 
     public static void main(String[] args) throws IOException {
         Game game = new Game();
