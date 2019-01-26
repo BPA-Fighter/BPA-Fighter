@@ -19,17 +19,17 @@ import java.awt.image.BufferStrategy;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import gfx.Assets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.TimerTask;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.Timer;
+
 import main.states.GameState;
 import main.states.State;
 import managers.KeyManager;
@@ -37,8 +37,8 @@ import managers.KeyManager;
 @SuppressWarnings({"unused", "serial"})
 public class Game extends Canvas implements Runnable {
 
-    public Timer counter;
-    public int time = 6000;
+    public static Timer counter = new Timer();
+    public static int time = 5500;
 
     static String[] gArgs;
 
@@ -198,7 +198,7 @@ public class Game extends Canvas implements Runnable {
                 ticks++;
                 tick();
                 delta--;
-                time();
+                //time();
                 canRender = true;
             }
 
@@ -283,28 +283,14 @@ check(time);
     }
 
     public void time() {
-         check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
-        time--;
-        counter = new javax.swing.Timer(30, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                try {
-                    
-                    Thread.sleep(1000);
-                } catch (Exception ex) {
-
-                }
-            }
-        });
-        System.out.println("Time " + time);
+         
     }
 
-    public void check(int time) {
+    public static void check(int time) {
         System.out.println("We made it hereeeeeeeeeeeeeeeeeeee");
-        if (time <= 0) {
+        if (time == 0) {
             System.out.println("And here as wellllllllllllllllllll");
-            counter.stop(); // this is what stops the timer. Oh and by the way i hope the button is big enough for you xD
+            counter.cancel();
            time = 0; 
         }
     }
@@ -317,6 +303,15 @@ check(time);
         Game game = new Game();
         gArgs = args;
         game.start();
+        check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
+        
+       counter.schedule(new TimerTask() {
+  @Override
+  public void run() {
+    time--;
+  }
+}, 2*60*1000);
+        System.out.println("Time " + time);
     }
 
     // GETTERS AND SETTERS
