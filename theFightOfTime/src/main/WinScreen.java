@@ -27,6 +27,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.states.GameState;
 
 /**
  *
@@ -35,6 +36,7 @@ import javafx.stage.Stage;
 public class WinScreen extends Application {
     
     static String[] gArgs;
+    static String winner = "";
     
     private static final Font FONT = Font.font("", FontWeight.BOLD, 18);
     private static final Font FONT2 = Font.font("", FontWeight.BOLD, 25);
@@ -74,7 +76,8 @@ public class WinScreen extends Application {
     }
 
     private Node createTitleContent() {
-        String title = "THE FIGHT OF TIME";
+        String title = "";
+        
         HBox letters = new HBox(0);
         letters.setAlignment(Pos.CENTER);
         letters.setTranslateX(58);
@@ -188,7 +191,8 @@ public class WinScreen extends Application {
         });
         primaryStage.show();
     }
-    public static void main() {
+    public static void main(String tempWinner) {
+        winner = tempWinner;
         gArgs = Game.getArgs();
         launch(gArgs);
     }
