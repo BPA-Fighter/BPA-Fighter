@@ -1,8 +1,5 @@
-# Street Fighter
 *Open the .jar file to play the game!*
 ---
-If you have any problems with the game loading assets, download the project and import to your java IDE. There, under com.streetFighter.main, execute the Game.java class.
-
 ## Controls
 ### Player 1:
  - W - jump
@@ -23,5 +20,3 @@ If you have any problems with the game loading assets, download the project and 
  - 2 - light punch (can also be used in air)
  - 3 - heavy kick (can also be used in air)
  - 4 - light kick 
-  
-![alt text](https://media.giphy.com/media/35PWrV0gSno6VcfMZF/giphy.gif)
