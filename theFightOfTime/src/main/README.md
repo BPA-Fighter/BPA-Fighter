@@ -1,6 +1,11 @@
 *Open the .jar file to play the game!*
 ---
 ## Controls
+
+### Everyone
+ - P - Pause
+ - Backspace - back to main menu(only from win screen)
+
 ### Player 1:
  - W - jump
  - A - strafe left

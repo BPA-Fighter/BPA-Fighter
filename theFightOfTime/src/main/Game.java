@@ -25,6 +25,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import gfx.Assets;
+import java.awt.event.KeyEvent;
 import java.util.TimerTask;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -202,7 +203,7 @@ public class Game extends Canvas implements Runnable {
                 tick();
                 delta--;
                 time();
-                pause(); 
+             // pause(); 
                 canRender = true;
             }
 
@@ -300,8 +301,11 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void pause(){
-        if(getKeyManager().P){
+        System.out.println("Before: Paused: " + paused);
+        if(getKeyManager().P ){
         paused = !paused;
+        System.out.println("After: Paused: " + paused);
+        }
         while(paused){
             getKeyManager().up = false;
             getKeyManager().down = false;
@@ -319,11 +323,16 @@ public class Game extends Canvas implements Runnable {
             getKeyManager().N4 = false;
             getKeyManager().N1 = false;
             getKeyManager().N2 = false;
-            if(getKeyManager().P && paused){
-                paused = false; 
-            }
         }
+    }
+    
+    public void keyPressed(KeyEvent e) {
+        int key = e.getKeyCode();
+        
+        if (key == KeyEvent.VK_P) {
+            pause();
         }
+        
     }
     
     public static String[] getArgs() {
