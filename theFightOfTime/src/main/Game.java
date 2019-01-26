@@ -38,7 +38,7 @@ import managers.KeyManager;
 public class Game extends Canvas implements Runnable {
 
     public Timer counter;
-    public int time = 1500;
+    public int time = 6000;
 
     static String[] gArgs;
 
@@ -197,8 +197,8 @@ public class Game extends Canvas implements Runnable {
 			    update the game...*/
                 ticks++;
                 tick();
-                delta--; 
-                time(); 
+                delta--;
+                time();
                 canRender = true;
             }
 
@@ -244,7 +244,7 @@ public class Game extends Canvas implements Runnable {
             State.getState().tick();
 
         }
-
+check(time);
     }
 
     public void render() {
@@ -283,25 +283,29 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void time() {
+         check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
         time--;
         counter = new javax.swing.Timer(30, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 try {
+                    
                     Thread.sleep(1000);
                 } catch (Exception ex) {
 
                 }
             }
         });
-         check(time); // this is to check if the timer has hit 0, if it has then it stops the timer
         System.out.println("Time " + time);
     }
 
     public void check(int time) {
+        System.out.println("We made it hereeeeeeeeeeeeeeeeeeee");
         if (time <= 0) {
+            System.out.println("And here as wellllllllllllllllllll");
             counter.stop(); // this is what stops the timer. Oh and by the way i hope the button is big enough for you xD
+           time = 0; 
         }
     }
     
