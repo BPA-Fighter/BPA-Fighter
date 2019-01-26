@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author grant
+ * 
  */
 public class InstructionsGUI extends Application {
 
