@@ -97,7 +97,7 @@ public class GameState extends State {
             if(game.getTime() <=0 && (mafia.getHealth() > iceGuy.getHealth())){
                 iceGuyRoundWins ++; 
             }
-            if (iceGuyRoundWins == 2) {
+            if (iceGuyRoundWins <= 2) {
             // win screen
             winner = "iceGuy";
             WinScreen.main(winner);
@@ -126,7 +126,7 @@ public class GameState extends State {
             mafiaRoundWins += 1;
             if(game.getTime() <=0 && (iceGuy.getHealth() > mafia.getHealth())){
                 mafiaRoundWins ++; 
-            if (mafiaRoundWins == 2) {
+            if (mafiaRoundWins <= 2) {
             // win screen
             winner = "mafia";
             WinScreen.main(winner);
@@ -150,60 +150,7 @@ public class GameState extends State {
                 
             }
         }
-        }
-        
-        // when the clock hits 0
-        if(game.getTime() <= 0){
-        if (mafia.getHealth() < iceGuy.getHealth()) {
-            //increases the amount of round wins for IceGuy
-            iceGuyRoundWins += 1;
-            if (iceGuyRoundWins == 2) {
-            // win screen
-            winner = "iceGuy";
-            WinScreen.main(winner);
-            //game.setTime(90);
-            }
-            try {
-            Game game = new Game();
-            if (Game.isNormal) {
-                Mafia.health = 100;
-                IceGuy.health = 100;
-            } else if (Game.isHard) {
-                Mafia.health = 300;
-                IceGuy.health = 300;
-            } else {
-                Mafia.health = 100;
-                IceGuy.health = 100;
-            }
-            if (mafiaRoundWins == 2) {
-            // win screen
-            winner = "mafia";
-            WinScreen.main(winner);
-            //game.setTime(90);
-            }
-            try {
-            game = new Game();
-            if (Game.isNormal) {
-                IceGuy.health = 100;
-                Mafia.health = 100;
-            } else if (Game.isHard) {
-                IceGuy.health = 300;
-            } else {
-                IceGuy.health = 100;
-                Mafia.health = 100;
-            }
-            iceGuy.render(g);
-            mafia.render(g);
-            game.start();
-            } catch (Exception e) {
-                
-            }
-        } catch (Exception e) {
-                
-            }
-        
-    }
-        }
+        }    
     }
 
 
