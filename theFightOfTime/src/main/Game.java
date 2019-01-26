@@ -204,27 +204,6 @@ public class Game extends Canvas implements Runnable {
                 time();
                 pause(); 
                 canRender = true;
-                while(paused){
-            getKeyManager().up = false;
-            getKeyManager().down = false;
-            getKeyManager().left = false;
-            getKeyManager().right = false;
-            getKeyManager().up1 = false;
-            getKeyManager().down1 = false;
-            getKeyManager().left1 = false;
-            getKeyManager().right1 = false;
-            getKeyManager().G = false;
-            getKeyManager().H = false;
-            getKeyManager().B = false;
-            getKeyManager().N = false;
-            getKeyManager().N4 = false;
-            getKeyManager().N4 = false;
-            getKeyManager().N1 = false;
-            getKeyManager().N2 = false;
-            if(getKeyManager().P && paused){
-                paused = false; 
-            }
-        }
             }
 
             // sleep program so that not to many frames are produced (reduce lag)
@@ -322,7 +301,28 @@ public class Game extends Canvas implements Runnable {
 
     public void pause(){
         if(getKeyManager().P){
-        paused = !paused; 
+        paused = !paused;
+        while(paused){
+            getKeyManager().up = false;
+            getKeyManager().down = false;
+            getKeyManager().left = false;
+            getKeyManager().right = false;
+            getKeyManager().up1 = false;
+            getKeyManager().down1 = false;
+            getKeyManager().left1 = false;
+            getKeyManager().right1 = false;
+            getKeyManager().G = false;
+            getKeyManager().H = false;
+            getKeyManager().B = false;
+            getKeyManager().N = false;
+            getKeyManager().N4 = false;
+            getKeyManager().N4 = false;
+            getKeyManager().N1 = false;
+            getKeyManager().N2 = false;
+            if(getKeyManager().P && paused){
+                paused = false; 
+            }
+        }
         }
     }
     
